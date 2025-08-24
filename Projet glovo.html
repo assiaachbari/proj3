@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glovo Casablanca</title>
+  <link rel="stylesheet" href="projet golovo.css" />
+</head>
+<body>
+
+  <!-- 🔰 NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+      <div class="logo">Glovo</div>
+      <a href="#" class="login-btn">Connexion</a>
+    </div>
+    <div class="navbar-center" id="main-title">
+      <h1>Parcourir Casablanca</h1>
+      <div class="location-input">
+        <input type="text" placeholder="Entrez votre adresse ou position" />
+        <button>📍 Utiliser ma position</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🟡 SECTION CATEGORIES -->
+  <section class="cards-section">
+    <div class="card">🍽️ Restaurant</div>
+    <div class="card">🛵 Service coursier</div>
+    <div class="card">💄 Parapharmacie & Beauté</div>
+    <div class="card">🛍️ Boutique</div>
+    <div class="card">🛒 Courses</div>
+    <div class="card">🧃 Glovo Market</div>
+  </section>
+
+  <!-- 📜 Script -->
+  <script>
+    const navbar = document.getElementById("navbar");
+    const mainTitle = document.getElementById("main-title");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add("shrink");
+        mainTitle.innerHTML = `
+          <h2>Saisissez votre adresse pour avoir ce qu'il y a dans le coin</h2>
+          <div class="location-input">
+            <input type="text" placeholder="Entrez votre adresse" />
+            <button>📍 Utiliser ma position</button>
+          </div>
+        `;
+      } else {
+        navbar.classList.remove("shrink");
+        mainTitle.innerHTML = `
+          <h1>Parcourir Casablanca</h1>
+          <div class="location-input">
+            <input type="text" placeholder="Entrez votre adresse ou position" />
+            <button>📍 Utiliser ma position</button>
+          </div>
+        `;
+      }
+    });
+  </script>
+<!-- 🏙️ Section des catégories -->
+<section class="best-categories">
+  <div class="icon">
+    <img src="https://img.icons8.com/ios-filled/100/city-buildings.png" alt="city" />
+  </div>
+  <h2>Meilleures Catégories à Casablanca</h2>
+  <div class="category-tags">
+    <span>Burgers</span>
+    <span>Sandwichs</span>
+    <span>Pizza</span>
+    <span>Poulet</span>
+    <span>Tacos</span>
+    <span>Grillades</span>
+    <span>Américain</span>
+    <span>Asiatique</span>
+    <span>Pâtes</span>
+    <span>Sushi</span>
+  </div>
+</section>
+<!-- 💼 Opportunités -->
+<section class="opportunites">
+  <div class="op-icon">
+    <img src="https://img.icons8.com/ios-filled/100/handshake.png" alt="opportunité">
+  </div>
+  <h2>Opportunités</h2>
+
+  <div class="op-cards">
+    <!-- Card 1 -->
+    <div class="op-card">
+      <img src="https://sell-stage-dcfa19ff.s3.eu-west-1.amazonaws.com/wp-content/uploads/sites/21/2022/11/20123510/Screenshot-2022-06-16-at-09.45.53.png" alt="coursier" />
+      <h3>Devenir coursier</h3>
+      <p>C'est vous le chef ! Livrez avec Glovo pour gagner des revenus compétitifs en toute flexibilité et liberté.</p>
+      <button>Inscription</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="op-card">
+      <img src="https://f.hellowork.com/obs-static-images/seo/ObsJob/chef-de-cuisine.jpg" alt="partenaire" />
+      <h3>Devenir partenaire</h3>
+      <p>Boostez les ventes et accédez à de nouvelles opportunités grâce à notre technologie et notre base d'utilisateurs !</p>
+      <button>Inscription</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="op-card">
+      <img src="https://f.hellowork.com/helloworkplace/2022/04/bureau-europe-1200x600.jpg" alt="emploi" />
+      <h3>Emploi</h3>
+      <p>Vous cherchez un nouveau défi ? Si vous êtes ambitieux(se), humble et aimez travailler en équipe, contactez-nous !</p>
+      <button>Inscription</button>
+    </div>
+  </div>
+</section>
+<!-- 🔻 Footer بسيط -->
+<footer class="simple-footer">
+  <h2>Glovo<span style="color: #ffce00;">📍</span></h2>
+
+  <div class="footer-links">
+    <div>
+      <h4>Opportunités</h4>
+      <p>Emploi</p>
+      <p>Partenaires</p>
+      <p>Coursiers</p>
+    </div>
+
+    <div>
+      <h4>Liens utiles</h4>
+      <p>À propos</p>
+      <p>FAQ</p>
+      <p>Connexion</p>
+    </div>
+
+    <div>
+      <h4>Nous suivre</h4>
+      <p>Instagram</p>
+      <p>TikTok</p>
+    </div>
+  </div>
+
+  <div class="app-icons">
+    <img src="https://img.icons8.com/ios-filled/50/apple-app-store--v2.png" alt="App Store">
+    <img src="https://img.icons8.com/ios-filled/50/google-play.png" alt="Play Store">
+  </div>
+
+  <p class="langue">🌐 Langue:
+    <select>
+      <option>Français</option>
+      <option>العربية</option>
+    </select>
+  </p>
+</footer>
+
+</body>
+</html>

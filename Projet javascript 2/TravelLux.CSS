@@ -1,0 +1,173 @@
+ 
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.font-playfair { 
+    font-family: 'Playfair Display', serif; 
+}
+
+.hero-bg {
+    background: linear-gradient(rgba(130, 114, 255, 0.4), rgba(153, 172, 255, 0.5)), 
+                url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2835&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.luxury-card {
+    background: rgba(114, 128, 255, 0.445);
+    backdrop-filter: blur(10px);
+    border: 0px solid rgba(0, 26, 255, 0.422);
+    box-shadow: 0 35px 70px rgba(0, 60, 255, 0.402);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 70px;
+}
+
+.luxury-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 70px 80px rgba(125, 140, 255, 0.25);
+    background: rgba(157, 226, 255, 0);
+}
+
+.destination-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 70px;
+    transition: all 0.4s ease;
+}
+
+.destination-card:hover {
+    transform: scale(1.05);
+}
+
+.destination-overlay {
+    background: linear-gradient(45deg, rgba(14, 0, 83, 0.231), rgba(1, 5, 255, 0.441));
+    transition: all 0.3s ease;
+}
+
+.destination-card:hover .destination-overlay {
+    background: linear-gradient(45deg, rgba(143, 115, 255, 0.5), rgba(0,0,0,0.1));
+}
+
+.floating-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-effect {
+    background: #ffffff15;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.121);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #1c009a 0%, #5b5896 100%);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(240, 147, 251, 0.4);
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-divider {
+    height: 100px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+.language-switcher {
+    position: relative;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(255, 255, 255, 0.258);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(154, 134, 255, 0.2);
+    min-width: 150px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.language-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.region-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.region-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.4s ease;
+}
+
+.region-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(151, 143, 255, 0.461);
+}
+
+/* Button Click Effects */
+button:active {
+    transform: scale(0.95) !important;
+}
+
+/* Input Focus Effects */
+input:focus, select:focus {
+    transform: scale(1.02);
+}
+
+/* Link Hover Effects */
+a:hover {
+    text-decoration: none;
+}
+
+/* Card Hover Effects */
+.luxury-card:active {
+    transform: translateY(-5px) scale(1.01) !important;
+}
+
+.destination-card:active {
+    transform: scale(1.02) !important;
+}

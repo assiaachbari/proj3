@@ -1,0 +1,435 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE ELITE - Premier Global Luxury Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="LUXE ELITE.CSS">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="luxury-gradient text-white sticky top-0 z-50 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 gold-gradient rounded-full flex items-center justify-center shadow-lg">
+                        <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="font-playfair text-3xl font-bold">LUXE ELITE</h1>
+                        <p class="text-xs text-gray-300">Premier Luxury Marketplace</p>
+                    </div>
+                </div>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#watches" class="hover:text-yellow-400 transition-colors font-medium flex items-center space-x-2">
+                        <span>⌚</span><span>Timepieces</span>
+                    </a>
+                    <a href="#cars" class="hover:text-yellow-400 transition-colors font-medium flex items-center space-x-2">
+                        <span>🏎️</span><span>Supercars</span>
+                    </a>
+                    <a href="#art" class="hover:text-yellow-400 transition-colors font-medium flex items-center space-x-2">
+                        <span>🎨</span><span>Fine Art</span>
+                    </a>
+                    <a href="#jewelry" class="hover:text-yellow-400 transition-colors font-medium flex items-center space-x-2">
+                        <span>💎</span><span>Jewelry</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="glass-effect px-6 py-2 rounded-full hover:bg-white hover:bg-opacity-20 transition-all font-medium">
+                        Sign In
+                    </button>
+                    <button class="gold-gradient px-6 py-2 rounded-full text-black font-semibold hover:opacity-90 transition-all shadow-lg">
+                        Consign Item
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Real Background -->
+    <section class="relative h-screen parallax" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80');">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative z-10 flex items-center justify-center h-full text-white text-center px-6">
+            <div class="max-w-4xl">
+                <h2 class="font-playfair text-7xl font-bold mb-6 leading-tight">
+                    The World's Most<br>
+                    <span class="gold-gradient bg-clip-text text-transparent">Exclusive</span><br>
+                    Luxury Marketplace
+                </h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
+                    Discover authenticated luxury treasures from the world's most prestigious brands. 
+                    From rare Patek Philippe timepieces to museum-quality art and exotic supercars.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button class="gold-gradient px-10 py-4 rounded-full text-black font-bold text-lg hover:opacity-90 transition-all shadow-2xl">
+                        Explore Collection
+                    </button>
+                    <button class="glass-effect px-10 py-4 rounded-full hover:bg-white hover:bg-opacity-20 transition-all font-semibold">
+                        Authentication Process
+                    </button>
+                </div>
+                <div class="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">$2.8B+</div>
+                        <div class="text-sm opacity-80">Total Sales</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">99.9%</div>
+                        <div class="text-sm opacity-80">Authentication Rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">150+</div>
+                        <div class="text-sm opacity-80">Countries</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl font-bold mb-4">Trusted by Collectors Worldwide</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our commitment to authenticity and security has made us the preferred platform for luxury enthusiasts globally.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center p-8 luxury-card rounded-2xl hover-lift">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1M10 17L6 13L7.41 11.59L10 14.17L16.59 7.58L18 9L10 17Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-xl font-semibold mb-3">Blockchain Authentication</h3>
+                    <p class="text-gray-600 text-sm">Every item verified with immutable blockchain certificates</p>
+                </div>
+                <div class="text-center p-8 luxury-card rounded-2xl hover-lift">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17,9H7V7C7,4.24 9.24,2 12,2C14.76,2 17,4.24 17,7V9M12,17C10.9,17 10,16.11 10,15C10,13.9 10.9,13 12,13C13.11,13 14,13.9 14,15C14,16.11 13.11,17 12,17M18,20V10H6V20H18M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V10C4,8.89 4.89,8 6,8H7V7C7,3.13 10.13,0 14,0C17.87,0 21,3.13 21,7V8H18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-xl font-semibold mb-3">Secure Escrow</h3>
+                    <p class="text-gray-600 text-sm">Bank-level security with full buyer protection</p>
+                </div>
+                <div class="text-center p-8 luxury-card rounded-2xl hover-lift">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,14L6,9L7.41,7.59L11,11.17L16.59,5.58L18,7L11,14Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-xl font-semibold mb-3">Expert Curation</h3>
+                    <p class="text-gray-600 text-sm">Certified specialists with decades of experience</p>
+                </div>
+                <div class="text-center p-8 luxury-card rounded-2xl hover-lift">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <svg class="w-10 h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-xl font-semibold mb-3">Global Concierge</h3>
+                    <p class="text-gray-600 text-sm">White-glove service and worldwide delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-4">Curated Collections</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Discover the world's most coveted luxury items, each authenticated and verified by our team of experts.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Luxury Watches -->
+                <div class="luxury-card rounded-3xl overflow-hidden shadow-2xl hover-lift cursor-pointer category-hover" onclick="showCategory('watches')">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523170335258-f5c6c6bd6eaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Luxury Watches" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 right-4 verified-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            ✓ Authenticated
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-playfair text-2xl font-bold mb-3">Luxury Timepieces</h3>
+                        <p class="text-gray-600 mb-4">Rolex, Patek Philippe, Audemars Piguet, Richard Mille</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-500">2,847 pieces available</span>
+                            <span class="text-sm font-semibold text-green-600">From $5,000</span>
+                        </div>
+                        <button class="w-full gold-gradient py-3 rounded-xl text-black font-bold hover:opacity-90 transition-all">
+                            Explore Watches
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fine Art -->
+                <div class="luxury-card rounded-3xl overflow-hidden shadow-2xl hover-lift cursor-pointer category-hover" onclick="showCategory('art')">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Fine Art" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 right-4 verified-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            ✓ Authenticated
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-playfair text-2xl font-bold mb-3">Fine Art & Collectibles</h3>
+                        <p class="text-gray-600 mb-4">Paintings, sculptures, rare prints, and masterpieces</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-500">5,621 artworks available</span>
+                            <span class="text-sm font-semibold text-green-600">From $2,500</span>
+                        </div>
+                        <button class="w-full gold-gradient py-3 rounded-xl text-black font-bold hover:opacity-90 transition-all">
+                            Browse Art
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Supercars -->
+                <div class="luxury-card rounded-3xl overflow-hidden shadow-2xl hover-lift cursor-pointer category-hover" onclick="showCategory('cars')">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Luxury Cars" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute top-4 right-4 verified-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            ✓ Authenticated
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-playfair text-2xl font-bold mb-3">Exotic Supercars</h3>
+                        <p class="text-gray-600 mb-4">Ferrari, Lamborghini, McLaren, Bugatti collection</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-500">1,234 vehicles available</span>
+                            <span class="text-sm font-semibold text-green-600">From $150,000</span>
+                        </div>
+                        <button class="w-full gold-gradient py-3 rounded-xl text-black font-bold hover:opacity-90 transition-all">
+                            View Cars
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Items with Real Images -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center mb-16">
+                <div>
+                    <h2 class="font-playfair text-5xl font-bold mb-4">Featured Treasures</h2>
+                    <p class="text-gray-600 text-lg">Handpicked by our experts, authenticated and ready for discerning collectors</p>
+                </div>
+                <button class="gold-gradient px-8 py-4 rounded-full text-black font-bold hover:opacity-90 transition-all shadow-lg">
+                    View All Items
+                </button>
+            </div>
+            
+            <div id="featured-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Process -->
+    <section class="py-20 luxury-gradient text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                 alt="Background" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold mb-4">Our Authentication Process</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">Every item undergoes rigorous verification by certified experts and cutting-edge technology</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center p-8 glass-effect rounded-2xl hover-lift">
+                    <div class="w-24 h-24 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold mb-3">1. Expert Submission</h3>
+                    <p class="opacity-90 text-sm">Submit your luxury item with detailed documentation and provenance</p>
+                </div>
+                <div class="text-center p-8 glass-effect rounded-2xl hover-lift">
+                    <div class="w-24 h-24 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5,12C18,12 20,14 20,16.5C20,17.38 19.75,18.21 19.31,18.9L22.39,22L21,23.39L17.88,20.32C17.19,20.75 16.37,21 15.5,21C13,21 11,19 11,16.5C11,14 13,12 15.5,12M15.5,14A2.5,2.5 0 0,0 13,16.5A2.5,2.5 0 0,0 15.5,19A2.5,2.5 0 0,0 18,16.5A2.5,2.5 0 0,0 15.5,14M6.5,2C7.89,2 9,3.11 9,4.5C9,5.89 7.89,7 6.5,7C5.11,7 4,5.89 4,4.5C4,3.11 5.11,2 6.5,2M9,19V9H8L6,12V10.5L8,7.5H10V19H9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold mb-3">2. Scientific Analysis</h3>
+                    <p class="opacity-90 text-sm">Advanced testing including spectroscopy and microscopic examination</p>
+                </div>
+                <div class="text-center p-8 glass-effect rounded-2xl hover-lift">
+                    <div class="w-24 h-24 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.8,20C17.4,21.2 16.3,22 15,22H5C3.3,22 2,20.7 2,19V18C2,17.4 2.4,17 3,17C3.6,17 4,17.4 4,18V19C4,19.6 4.4,20 5,20H15C15.6,20 16,19.6 16,19V5C16,4.4 15.6,4 15,4H5C4.4,4 4,4.4 4,5V6C4,6.6 3.6,7 3,7C2.4,7 2,6.6 2,6V5C2,3.3 3.3,2 5,2H15C16.3,2 17.4,2.8 17.8,4H19C20.7,4 22,5.3 22,7V17C22,18.7 20.7,20 19,20H17.8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold mb-3">3. Blockchain Certificate</h3>
+                    <p class="opacity-90 text-sm">Immutable digital certificate recorded on blockchain technology</p>
+                </div>
+                <div class="text-center p-8 glass-effect rounded-2xl hover-lift">
+                    <div class="w-24 h-24 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <svg class="w-12 h-12 text-black" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,14L6,9L7.41,7.59L11,11.17L16.59,5.58L18,7L11,14Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold mb-3">4. Market Ready</h3>
+                    <p class="opacity-90 text-sm">Listed with full authentication guarantee and buyer protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl font-bold mb-4">Trusted by Collectors</h2>
+                <p class="text-gray-600 text-lg">What our clients say about their experience</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="luxury-card p-8 rounded-2xl hover-lift">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                             alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">James Morrison</h4>
+                            <p class="text-sm text-gray-600">Watch Collector</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Purchased my dream Patek Philippe through LUXE ELITE. The authentication process was thorough and the service exceptional."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        ★★★★★
+                    </div>
+                </div>
+                <div class="luxury-card p-8 rounded-2xl hover-lift">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                             alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Chen</h4>
+                            <p class="text-sm text-gray-600">Art Collector</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Sold my Monet through their platform. The expertise and professionalism exceeded all expectations. Highly recommended."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        ★★★★★
+                    </div>
+                </div>
+                <div class="luxury-card p-8 rounded-2xl hover-lift">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                             alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Rodriguez</h4>
+                            <p class="text-sm text-gray-600">Car Enthusiast</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Found my Ferrari 488 GTB here. The verification process gave me complete confidence in my purchase."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-12 gold-gradient rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair text-2xl font-bold">LUXE ELITE</h3>
+                            <p class="text-sm text-gray-300">Premier Luxury Marketplace</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">The world's most trusted luxury marketplace, connecting discerning collectors with authenticated treasures from around the globe.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-white hover:bg-opacity-20 transition-all cursor-pointer">
+                            <span>📘</span>
+                        </div>
+                        <div class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-white hover:bg-opacity-20 transition-all cursor-pointer">
+                            <span>📷</span>
+                        </div>
+                        <div class="w-10 h-10 glass-effect rounded-full flex items-center justify-center hover:bg-white hover:bg-opacity-20 transition-all cursor-pointer">
+                            <span>🐦</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-playfair text-lg font-semibold mb-6">Categories</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Luxury Watches</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Fine Art</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Supercars</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Jewelry</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Collectibles</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-playfair text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Authentication</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Consignment</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Appraisal</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Insurance</a></li>
+                        <li><a href="#" class="hover:text-yellow-400 transition-colors">Concierge</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-playfair text-lg font-semibold mb-6">Contact</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center space-x-2">
+                            <span>📧</span>
+                            <span>concierge@luxeelite.com</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span>📞</span>
+                            <span>+1 (555) 123-LUXE</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span>🌍</span>
+                            <span>Available 24/7 Worldwide</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span>🏢</span>
+                            <span>New York • London • Geneva</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 LUXE ELITE. All rights reserved. | Privacy Policy | Terms of Service | Authentication Guarantee</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Item Detail Modal -->
+    <div id="item-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div id="modal-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="LUXE ELITE.JS"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9742b958b525f76f',t:'MTc1NjAzNzE5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+

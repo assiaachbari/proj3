@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commande Produit</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1117;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #58a6ff;
+    }
+
+    form {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      background: #0d1117;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background: #2ea043;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .produit {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #2ea043;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Commander votre produit</h1>
+  <div class="produit" id="nom-produit">Produit: ...</div>
+
+  <form>
+    <label>Nom complet :</label>
+    <input type="text" required>
+
+    <label>Adresse de livraison :</label>
+    <textarea rows="3" required></textarea>
+
+    <label>Numéro de téléphone :</label>
+    <input type="tel" required>
+
+    <button type="submit">Valider la commande</button>
+  </form>
+
+  <script>
+    // Extraire nom du produit depuis l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const produit = urlParams.get("produit");
+    const nomAffiche = produit 
+      ? "Produit sélectionné : " + produit.charAt(0).toUpperCase() + produit.slice(1) 
+      : "Aucun produit sélectionné";
+
+    document.getElementById("nom-produit").textContent = nomAffiche;
+  </script>
+
+</body>
+</html>

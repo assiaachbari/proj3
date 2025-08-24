@@ -1,0 +1,467 @@
+ <!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saveurs Maison - Plats Traditionnels & Livraison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Saveurs Maison.CSS">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="nav-blur shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-playfair font-bold text-purple-600">🍽️ Saveurs Maison</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-gray-700 hover:text-purple-600 font-medium">Accueil</a>
+                    <a href="#menu" class="text-gray-700 hover:text-purple-600 font-medium">Menu</a>
+                    <a href="#specialites" class="text-gray-700 hover:text-purple-600 font-medium">Spécialités</a>
+                    <a href="#livraison" class="text-gray-700 hover:text-purple-600 font-medium">Livraison</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 font-medium">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleCart()" class="relative bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                        🛒 Panier
+                        <span id="cart-count" class="cart-badge absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-playfair text-5xl md:text-6xl font-bold mb-6">Saveurs Authentiques</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Découvrez nos plats traditionnels faits maison et nos délicieuses pâtisseries</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToMenu()" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:transform hover:scale-105 transition-all">
+                    🍴 Voir le Menu
+                </button>
+                <button onclick="scrollToLivraison()" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                    🚚 Livraison Rapide
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-gray-800 mb-4">Notre Menu</h2>
+                <p class="text-gray-600 text-lg">Des plats préparés avec amour et des ingrédients frais</p>
+            </div>
+
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterMenu('tous')" class="menu-filter active bg-purple-600 text-white px-6 py-3 rounded-full font-medium hover:bg-purple-700 transition-colors">
+                    Tous les plats
+                </button>
+                <button onclick="filterMenu('plats')" class="menu-filter bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition-colors">
+                    Plats Principaux
+                </button>
+                <button onclick="filterMenu('desserts')" class="menu-filter bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition-colors">
+                    Desserts
+                </button>
+                <button onclick="filterMenu('boissons')" class="menu-filter bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-gray-300 transition-colors">
+                    Boissons
+                </button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Plat 1 -->
+                <div class="menu-item plats bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Couscous Royal" class="food-image">
+                        <div class="price-badge">€18.50</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Couscous Royal</h3>
+                            <div class="rating-stars">★★★★★</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Couscous traditionnel avec agneau, poulet et merguez, légumes de saison</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">⏱️ 25-30 min</div>
+                            <button onclick="addToCart('Couscous Royal', 18.50)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plat 2 -->
+                <div class="menu-item plats bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tajine d'Agneau" class="food-image">
+                        <div class="price-badge">€22.00</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Tajine d'Agneau</h3>
+                            <div class="rating-stars">★★★★★</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Agneau mijoté aux pruneaux et amandes, épices traditionnelles</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">⏱️ 30-35 min</div>
+                            <button onclick="addToCart('Tajine d\'Agneau', 22.00)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plat 3 -->
+                <div class="menu-item plats bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Pastilla au Poulet" class="food-image">
+                        <div class="price-badge">€16.00</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Pastilla au Poulet</h3>
+                            <div class="rating-stars">★★★★☆</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Feuilleté croustillant au poulet, amandes et cannelle</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">⏱️ 20-25 min</div>
+                            <button onclick="addToCart('Pastilla au Poulet', 16.00)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plat 4 -->
+                <div class="menu-item plats bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Paella Valenciana" class="food-image">
+                        <div class="price-badge">€24.00</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Paella Valenciana</h3>
+                            <div class="rating-stars">★★★★★</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Riz safranné aux fruits de mer, poulet et légumes frais</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">⏱️ 35-40 min</div>
+                            <button onclick="addToCart('Paella Valenciana', 24.00)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 1 -->
+                <div class="menu-item desserts bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Baklava Maison" class="food-image">
+                        <div class="price-badge">€8.50</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Baklava Maison</h3>
+                            <div class="rating-stars">★★★★★</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pâtisserie feuilletée aux noix et miel, recette familiale</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">🍯 Fait maison</div>
+                            <button onclick="addToCart('Baklava Maison', 8.50)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 2 -->
+                <div class="menu-item desserts bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mille-feuille Oriental" class="food-image">
+                        <div class="price-badge">€9.00</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Mille-feuille Oriental</h3>
+                            <div class="rating-stars">★★★★☆</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Crème pâtissière à la fleur d'oranger et pistaches</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">🌸 Fleur d'oranger</div>
+                            <button onclick="addToCart('Mille-feuille Oriental', 9.00)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert 3 -->
+                <div class="menu-item desserts bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tiramisu Maison" class="food-image">
+                        <div class="price-badge">€7.50</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Tiramisu Maison</h3>
+                            <div class="rating-stars">★★★★★</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mascarpone, café italien et cacao, recette authentique</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">☕ Café italien</div>
+                            <button onclick="addToCart('Tiramisu Maison', 7.50)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boisson 1 -->
+                <div class="menu-item boissons bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Thé à la Menthe" class="food-image">
+                        <div class="price-badge">€4.50</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Thé à la Menthe</h3>
+                            <div class="rating-stars">★★★★★</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Thé vert traditionnel à la menthe fraîche</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">🌿 Menthe fraîche</div>
+                            <button onclick="addToCart('Thé à la Menthe', 4.50)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boisson 2 -->
+                <div class="menu-item boissons bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Jus d'Orange Frais" class="food-image">
+                        <div class="price-badge">€5.00</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-playfair text-xl font-semibold">Jus d'Orange Frais</h3>
+                            <div class="rating-stars">★★★★☆</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Oranges pressées à la minute, 100% naturel</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-500">🍊 100% naturel</div>
+                            <button onclick="addToCart('Jus d\'Orange Frais', 5.00)" class="btn-primary text-white px-6 py-2 rounded-lg font-medium hover:transform hover:scale-105 transition-all">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialites Section -->
+    <section id="specialites" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-gray-800 mb-4">Nos Spécialités</h2>
+                <p class="text-gray-600 text-lg">Ce qui nous rend uniques</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-8 specialty-card rounded-xl shadow-lg card-hover floating-elements relative overflow-hidden">
+                    <div class="text-6xl mb-6">👩‍🍳</div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4">Fait Maison</h3>
+                    <p class="text-white opacity-90 leading-relaxed">Tous nos plats sont préparés quotidiennement avec des recettes traditionnelles transmises de génération en génération.</p>
+                    <div class="mt-6 inline-block bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">
+                        ✨ Recettes authentiques
+                    </div>
+                </div>
+                <div class="text-center p-8 bg-white rounded-xl shadow-lg card-hover relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-green-100 rounded-full -mr-10 -mt-10"></div>
+                    <div class="text-6xl mb-6">🌿</div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4 text-gray-800">Ingrédients Frais</h3>
+                    <p class="text-gray-600 leading-relaxed">Nous sélectionnons soigneusement nos ingrédients auprès de producteurs locaux pour garantir fraîcheur et qualité.</p>
+                    <div class="mt-6 inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                        🥬 100% Local
+                    </div>
+                </div>
+                <div class="text-center p-8 delivery-gradient rounded-xl shadow-lg card-hover text-white relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-16 h-16 bg-white bg-opacity-20 rounded-full -ml-8 -mb-8"></div>
+                    <div class="text-6xl mb-6">⚡</div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4">Livraison Express</h3>
+                    <p class="text-white opacity-90 leading-relaxed">Livraison en moins de 30 minutes dans un rayon de 10km. Vos plats arrivent chauds et savoureux.</p>
+                    <div class="mt-6 inline-block bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-medium">
+                        🚚 < 30 minutes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gradient-to-br from-orange-50 to-red-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-gray-800 mb-4">Avis de nos Clients</h2>
+                <p class="text-gray-600 text-lg">Ce qu'ils disent de nos saveurs authentiques</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Marie Dubois" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Marie Dubois</h4>
+                            <div class="rating-stars text-lg">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed">"Le couscous royal était absolument délicieux ! Les saveurs me rappellent les plats de ma grand-mère. Livraison rapide et plat encore chaud."</p>
+                </div>
+                <div class="testimonial-card p-8 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Pierre Martin" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Pierre Martin</h4>
+                            <div class="rating-stars text-lg">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed">"Service impeccable ! J'ai commandé le tajine d'agneau et c'était un vrai régal. Les portions sont généreuses et les prix très corrects."</p>
+                </div>
+                <div class="testimonial-card p-8 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sophie Laurent" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sophie Laurent</h4>
+                            <div class="rating-stars text-lg">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic leading-relaxed">"Les baklavas sont à tomber ! Exactement comme ceux que je mangeais en voyage. Une adresse à retenir absolument."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Livraison Section -->
+    <section id="livraison" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-gray-800 mb-4">Zone de Livraison</h2>
+                <p class="text-gray-600 text-lg">Nous livrons dans toute la région parisienne</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-90"></div>
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Livraison" class="w-full h-full object-cover">
+                        <div class="relative p-8 text-white">
+                            <h3 class="font-playfair text-3xl font-bold mb-8">Informations de Livraison</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                    <span class="text-3xl mr-4">🕐</span>
+                                    <div>
+                                        <p class="font-bold text-lg">Horaires</p>
+                                        <p class="opacity-90 text-lg">11h30 - 14h30 | 18h30 - 22h30</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                    <span class="text-3xl mr-4">💰</span>
+                                    <div>
+                                        <p class="font-bold text-lg">Frais de livraison</p>
+                                        <p class="opacity-90 text-lg">€3.50 (Gratuit dès €35)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                                    <span class="text-3xl mr-4">📍</span>
+                                    <div>
+                                        <p class="font-bold text-lg">Zone de livraison</p>
+                                        <p class="opacity-90 text-lg">Paris et proche banlieue (10km)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-gray-100 rounded-xl p-8">
+                        <h3 class="font-playfair text-2xl font-semibold mb-6 text-center">Vérifier votre adresse</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Votre adresse complète" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <input type="text" placeholder="Code postal" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <button type="button" onclick="checkDelivery()" class="w-full btn-primary text-white py-3 rounded-lg font-semibold hover:transform hover:scale-105 transition-all">
+                                Vérifier la livraison
+                            </button>
+                        </form>
+                        <div id="delivery-result" class="mt-4 p-4 rounded-lg hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold mb-4">Contactez-nous</h2>
+                <p class="text-gray-300 text-lg">Une question ? Nous sommes là pour vous aider</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="font-semibold text-xl mb-2">Téléphone</h3>
+                    <p class="text-gray-300">01 23 45 67 89</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">✉️</div>
+                    <h3 class="font-semibold text-xl mb-2">Email</h3>
+                    <p class="text-gray-300">contact@saveursmaison.fr</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl mb-4">📍</div>
+                    <h3 class="font-semibold text-xl mb-2">Adresse</h3>
+                    <p class="text-gray-300">123 Rue de la Gastronomie<br>75001 Paris</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 modal-backdrop hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 max-h-96 overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="font-playfair text-2xl font-bold">Votre Panier</h3>
+                <button onclick="toggleCart()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div id="cart-items" class="space-y-4 mb-6">
+                <p class="text-gray-500 text-center">Votre panier est vide</p>
+            </div>
+            <div class="border-t pt-4">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="font-semibold text-lg">Total:</span>
+                    <span id="cart-total" class="font-bold text-xl text-purple-600">€0.00</span>
+                </div>
+                <button onclick="checkout()" class="w-full btn-primary text-white py-3 rounded-lg font-semibold hover:transform hover:scale-105 transition-all">
+                    Commander Maintenant
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="font-playfair text-2xl font-bold mb-4">🍽️ Saveurs Maison</div>
+            <p class="text-gray-400 mb-4">Authenticité • Qualité • Tradition</p>
+            <p class="text-gray-500">&copy; 2024 Saveurs Maison. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="Saveurs Maison.CSS"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97016a9315adeca5',t:'MTc1NTM1MjM4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,153 @@
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoLux - Montres de Luxe</title>
+    <link rel="stylesheet" href="Boutique de Montres.CSS">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>𝘊𝖍𝖗𝖔𝗇𝖔𝐋ᴜ𝔁</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cart">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h2>ℭ𝔬𝔩𝔩𝔢𝔠𝔱𝔦𝔬𝔫 𝔈𝔵𝔠𝔩𝔲𝔰𝔦𝔳𝔢 𝔡𝔢 𝔐𝔬𝔫𝔱𝔯𝔢𝔰</h2>
+            <p>𝓓𝓮́𝓬𝓸𝓾𝓿𝓻𝓮𝔃 𝓷𝓸𝓽𝓻𝓮 𝓼𝓮́𝓵𝓮𝓬𝓽𝓲𝓸𝓷 𝓭𝓮 𝓶𝓸𝓷𝓽𝓻𝓮𝓼 𝓭𝓮 𝓵𝓾𝔁𝓮 𝓹𝓸𝓾𝓻 𝓽𝓸𝓾𝓼 𝓵𝓮𝓼 𝓰𝓸û𝓽𝓼</p>
+            <button class="cta-button" onclick="scrollToProducts()">Voir la Collection</button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produits" class="products">
+        <div class="container">
+            <h2 class="section-title">Nos Montres</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('tous')">Tous</button>
+                <button class="filter-btn" onclick="filterProducts('homme')">Homme</button>
+                <button class="filter-btn" onclick="filterProducts('femme')">Femme</button>
+                <button class="filter-btn" onclick="filterProducts('sport')">Sport</button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <h2 class="section-title">À Propos de ChronoLux</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Depuis plus de 20 ans, ChronoLux est votre spécialiste en montres de luxe. Nous proposons une sélection exclusive des plus grandes marques horlogères mondiales.</p>
+                    <p>Notre expertise et notre passion pour l'horlogerie nous permettent de vous offrir des conseils personnalisés pour trouver la montre parfaite.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <span class="feature-icon">✨</span>
+                        <h3>Qualité Premium</h3>
+                        <p>Montres authentiques garanties</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🚚</span>
+                        <h3>Livraison Gratuite</h3>
+                        <p>Livraison sécurisée offerte</p>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🔧</span>
+                        <h3>Service Après-Vente</h3>
+                        <p>Réparation et entretien</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-Nous</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informations de Contact</h3>
+                    <p>📍 123 Rue de la Paix, 75001 Paris</p>
+                    <p>📞 +33 1 23 45 67 89</p>
+                    <p>✉️ contact@chronolux.fr</p>
+                    <p>🕒 Lun-Sam: 9h-19h</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="email" placeholder="Votre email" required>
+                    <textarea placeholder="Votre message" rows="5" required></textarea>
+                    <button type="submit">Envoyer le Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Votre Panier</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <strong>Total: <span id="cartTotal">0€</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Passer Commande</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ChronoLux</h3>
+                    <p>Votre spécialiste en montres de luxe depuis 2003</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#apropos">À Propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-Nous</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ChronoLux. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Boutique d'Électronique.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96c88a46779811e6',t:'MTc1NDc1NTk5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

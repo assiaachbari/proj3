@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportGames - Boutique</title>
+    <link rel="stylesheet" href="SportGames.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">SportGames</div>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="panier.html">🛒 Panier (<span id="cart-count">0</span>)</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <h1>Bienvenue chez SportGames</h1>
+    <p>Votre boutique de jeux vidéo sportifs préférée</p>
+</section>
+
+<section class="products">
+    <div class="product-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6e/FIFA_23_Cover.jpg" alt="FIFA 23">
+        <h3>FIFA 23</h3>
+        <p>Jeu de football réaliste et passionnant.</p>
+        <span>59.99€</span>
+        <button onclick="ajouterPanier('FIFA 23', 59.99)">Ajouter au panier</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/fd/NBA_2K23_Cover.jpg" alt="NBA 2K23">
+        <h3>NBA 2K23</h3>
+        <p>Le meilleur jeu de basket-ball sur console.</p>
+        <span>49.99€</span>
+        <button onclick="ajouterPanier('NBA 2K23', 49.99)">Ajouter au panier</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/d/d3/Madden_NFL_23_cover_art.jpg" alt="Madden NFL 23">
+        <h3>Madden NFL 23</h3>
+        <p>Vivez le football américain comme jamais.</p>
+        <span>54.99€</span>
+        <button onclick="ajouterPanier('Madden NFL 23', 54.99)">Ajouter au panier</button>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 SportGames. Tous droits réservés.</p>
+</footer>
+
+<script src="SportGames.JS"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+ /* Styles personnalisés pour MediCare */
+
+* {
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Gradients médicaux */
+.gradient-medical {
+    background: linear-gradient(135deg, #1e40af 0%, #0d9488 50%, #059669 100%);
+}
+
+.gradient-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* Animations et transitions */
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(30, 64, 175, 0.15);
+}
+
+/* Animation de pulsation */
+.pulse-dot {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 0.7; 
+        transform: scale(1.1); 
+    }
+}
+
+/* Animation flottante */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    50% { 
+        transform: translateY(-10px); 
+    }
+}
+
+/* Ombres médicales */
+.medical-shadow {
+    box-shadow: 0 10px 40px rgba(30, 64, 175, 0.1);
+}
+
+/* Styles pour les liens de navigation avec effet de soulignement */
+nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+nav a span {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease;
+}
+
+nav a:hover span {
+    width: 100%;
+}
+
+/* Styles pour les formulaires */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+/* Styles pour les boutons avec effet de survol */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Styles pour les cartes de services */
+.service-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(30, 64, 175, 0.1);
+}
+
+/* Styles pour les cartes de médecins */
+.doctor-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(30, 64, 175, 0.1);
+}
+
+/* Styles pour la section héro */
+.hero-section {
+    background: linear-gradient(135deg, #1e40af 0%, #0d9488 50%, #059669 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Styles pour les éléments flottants dans le héro */
+.hero-floating-element {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+}
+
+/* Styles pour les badges de statut */
+.status-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Styles pour les sections avec fond dégradé */
+.gradient-section {
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+/* Styles pour les modales */
+.modal-backdrop {
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Styles pour les étoiles de notation */
+.rating-stars {
+    color: #fbbf24;
+}
+
+/* Styles pour les indicateurs de disponibilité */
+.availability-indicator {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Styles responsifs */
+@media (max-width: 768px) {
+    .card-hover:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .floating {
+        animation: none;
+    }
+    
+    .hero-floating-element {
+        display: none;
+    }
+}
+
+/* Styles pour l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    .card-hover,
+    .floating,
+    .pulse-dot {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Styles pour le mode sombre (optionnel) */
+@media (prefers-color-scheme: dark) {
+    .gradient-card {
+        background: linear-gradient(145deg, #1f2937 0%, #111827 100%);
+    }
+}

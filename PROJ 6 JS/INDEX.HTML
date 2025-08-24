@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوقات الصلاة في المغرب - دليلك الشامل</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="fas fa-mosque.CSS">
+</head>
+<body class="hero-bg">
+    <!-- Navigation Bar -->
+    <nav class="navbar fixed top-0 w-full z-50 px-4 py-3">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <i class="fas fa-mosque text-2xl text-white"></i>
+                <h1 class="text-xl font-bold text-white">أوقات الصلاة</h1>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <span class="text-sm text-white font-semibold" id="currentTime"></span>
+                <i class="fas fa-clock text-white"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-20 pb-8">
+        <!-- Hero Section -->
+        <div class="container mx-auto px-4 text-center mb-12">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                أوقات الصلاة في المغرب
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                دليلك الموثوق لمعرفة أوقات الصلاة الدقيقة في جميع المدن المغربية
+            </p>
+        </div>
+
+        <!-- City Selection -->
+        <div class="container mx-auto px-4 mb-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="city-card rounded-2xl p-8 shadow-2xl">
+                    <div class="flex flex-col lg:flex-row items-center gap-8">
+                        <div class="flex-1">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4">اختر مدينتك</h2>
+                            <select id="citySelect" class="w-full px-6 py-4 text-lg font-semibold bg-gray-50 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-all">
+                                <option value="casablanca">الدار البيضاء</option>
+                                <option value="rabat">الرباط</option>
+                                <option value="fes">فاس</option>
+                                <option value="marrakech">مراكش</option>
+                                <option value="meknes">مكناس</option>
+                                <option value="tangier">طنجة</option>
+                                <option value="agadir">أكادير</option>
+                                <option value="oujda">وجدة</option>
+                                <option value="kenitra">القنيطرة</option>
+                                <option value="tetouan">تطوان</option>
+                            </select>
+                        </div>
+                        <div class="flex-1">
+                            <img id="cityImage" src="" alt="صورة المدينة" class="city-image shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current City Info -->
+        <div class="container mx-auto px-4 mb-12">
+            <div class="max-w-6xl mx-auto">
+                <div class="city-card rounded-2xl p-8 shadow-2xl text-center">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4" id="currentCity">الدار البيضاء</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="stats-card rounded-xl p-4">
+                            <div class="moroccan-ornament"></div>
+                            <i class="fas fa-calendar-alt text-2xl text-amber-700 mb-2"></i>
+                            <p class="text-sm text-amber-800">التاريخ الميلادي</p>
+                            <p class="font-bold text-amber-900" id="currentDate"></p>
+                        </div>
+                        <div class="stats-card rounded-xl p-4">
+                            <div class="moroccan-ornament"></div>
+                            <i class="fas fa-moon text-2xl text-amber-700 mb-2"></i>
+                            <p class="text-sm text-amber-800">التاريخ الهجري</p>
+                            <p class="font-bold text-amber-900" id="hijriDate"></p>
+                        </div>
+                        <div class="stats-card rounded-xl p-4">
+                            <div class="moroccan-ornament"></div>
+                            <i class="fas fa-sun text-2xl text-amber-700 mb-2"></i>
+                            <p class="text-sm text-amber-800">حالة الطقس</p>
+                            <p class="font-bold text-amber-900">مشمس ☀️ 24°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Prayer Banner -->
+        <div class="container mx-auto px-4 mb-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="next-prayer-banner rounded-2xl p-8 text-center text-white shadow-2xl relative z-10">
+                    <h3 class="text-2xl font-bold mb-4 relative z-20">🕌 الصلاة القادمة</h3>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8 relative z-20">
+                        <div class="bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                            <i class="fas fa-pray text-4xl mb-2"></i>
+                            <p class="text-xl font-bold" id="nextPrayer">الظهر</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-xl p-4 backdrop-blur-sm">
+                            <i class="fas fa-clock text-4xl mb-2"></i>
+                            <p class="text-sm opacity-90">الوقت المتبقي</p>
+                            <p class="text-3xl font-bold" id="countdown">02:45</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prayer Times Grid -->
+        <div class="container mx-auto px-4 mb-12">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-3xl font-bold text-white text-center mb-8">أوقات الصلاة اليوم</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="prayerGrid">
+                    <!-- Prayer cards will be generated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="container mx-auto px-4 text-center">
+            <div class="city-card rounded-2xl p-6 shadow-2xl">
+                <p class="text-gray-600 mb-4">
+                    <i class="fas fa-info-circle ml-2"></i>
+                    أوقات الصلاة محسوبة وفقاً لوزارة الأوقاف والشؤون الإسلامية بالمغرب
+                </p>
+                <div class="flex justify-center space-x-6 space-x-reverse text-gray-500">
+                    <span><i class="fas fa-mosque ml-1"></i> دقيق</span>
+                    <span><i class="fas fa-clock ml-1"></i> محدث</span>
+                    <span><i class="fas fa-map-marker-alt ml-1"></i> شامل</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="fas fa-mosque.JS"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97099332b5b18674',t:'MTc1NTQzNzkzOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

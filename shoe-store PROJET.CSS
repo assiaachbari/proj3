@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+}
+
+/* ===== Header ===== */
+header {
+    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px;
+  background-color: #1111117c;
+  color: #fff;
+}
+
+.logo {
+  font-family: 'Cursive', 'Georgia', serif; 
+  font-size: 60px;
+  font-weight: bold;
+  color: #f4b400;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 7px;
+  background-color: #f4b400;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #f4b400;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('PROJ\ LOGO.png');
+  background-repeat: no-repeat;
+  background-size: 55% auto; /* ✅ العرض %100 – الارتفاع تلقائي */
+  background-position: center top;
+  background-attachment: fixed;
+}
+/* قسم الكروت */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 40px;
+  position: relative;
+  z-index: 10; /* فوق الخلفية */
+}
+
+/* كرت المنتج */
+.product-card {
+  background-color: rgba(255, 255, 255, 0); /* شفاف قليلاً */
+  width: 230px;
+  border-radius: 12px;
+  box-shadow: 0 18px 20px rgba(0,0,0,0.2);
+  padding: 55px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  color: #222;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.product-card button {
+  background-color: #f4b400;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #d48c00;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.326);
+  color: rgb(255, 222, 8);
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+  border-top: 2px solid #f4b400;
+  z-index: 999;
+}

@@ -1,0 +1,947 @@
+ 
+<!-- index.html --><!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelLux - Premium Travel & Tourism Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="TravelLux.CSS">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="glass-effect fixed w-full z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="floating-animation">
+                        <i class="fas fa-plane text-3xl text-blue-600 mr-3"></i>
+                    </div>
+                    <h1 class="font-playfair text-3xl font-bold gradient-text">TravelLux</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#destinations" class="text-white hover:text-blue-300 transition-colors font-medium">Destinations</a>
+                    <a href="#hotels" class="text-white hover:text-blue-300 transition-colors font-medium">Hotels</a>
+                    <a href="#experiences" class="text-white hover:text-blue-300 transition-colors font-medium">Experiences</a>
+                    <a href="#vr-tours" class="text-white hover:text-blue-300 transition-colors font-medium">VR Tours</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button onclick="toggleLanguageDropdown()" class="glass-effect text-white px-4 py-2 rounded-full font-medium flex items-center hover:bg-white hover:bg-opacity-20 transition-all duration-300 transform hover:scale-105 active:scale-95">
+                            <i class="fas fa-globe mr-2"></i>
+                            <span id="currentLang">EN</span>
+                            <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown">
+                            <a href="#" onclick="switchLanguage('en')" class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors transform hover:scale-105 active:scale-95">
+                                <img src="https://flagcdn.com/w20/us.png" alt="English" class="w-5 h-3 mr-3">
+                                English
+                            </a>
+                            <a href="#" onclick="switchLanguage('ar')" class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors transform hover:scale-105 active:scale-95">
+                                <img src="https://flagcdn.com/w20/sa.png" alt="Arabic" class="w-5 h-3 mr-3">
+                                العربية
+                            </a>
+                            <a href="#" onclick="switchLanguage('fr')" class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors transform hover:scale-105 active:scale-95">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="French" class="w-5 h-3 mr-3">
+                                Français
+                            </a>
+                            <a href="#" onclick="switchLanguage('es')" class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors transform hover:scale-105 active:scale-95">
+                                <img src="https://flagcdn.com/w20/es.png" alt="Spanish" class="w-5 h-3 mr-3">
+                                Español
+                            </a>
+                        </div>
+                    </div>
+                    <button class="btn-primary text-white px-8 py-3 rounded-full font-semibold transform hover:scale-105 active:scale-95 transition-all duration-300">
+                        <i class="fas fa-user mr-2"></i>
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative z-10 text-center text-white max-w-6xl mx-auto px-4">
+            <div class="floating-animation">
+                <h1 class="font-playfair text-6xl md:text-8xl font-bold mb-6 leading-tight">
+                    Discover the World
+                </h1>
+                <p class="text-2xl md:text-3xl mb-8 opacity-90 font-medium">
+                    Premium destinations and luxury hotels worldwide
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
+                <button onclick="startVRTour()" class="btn-secondary text-white px-10 py-4 rounded-full font-bold text-xl shadow-2xl transform hover:scale-105 active:scale-95 transition-all duration-300">
+                    <i class="fas fa-vr-cardboard mr-2"></i>
+                    Virtual Tour
+                </button>
+                <button onclick="showRecommendations()" class="glass-effect text-white px-10 py-4 rounded-full font-bold text-xl border-2 border-white hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 active:scale-95 duration-300">
+                    <i class="fas fa-compass mr-2"></i>
+                    Explore Destinations
+                </button>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="glass-effect rounded-2xl p-6">
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="relative">
+                            <i class="fas fa-map-marker-alt absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" placeholder="Where do you want to go?" class="w-full pl-10 pr-4 py-3 rounded-xl bg-white bg-opacity-20 text-white placeholder-gray-300 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300">
+                        </div>
+                        <div class="relative">
+                            <i class="fas fa-calendar absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="date" class="w-full pl-10 pr-4 py-3 rounded-xl bg-white bg-opacity-20 text-white border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300">
+                        </div>
+                        <div class="relative">
+                            <i class="fas fa-users absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <select class="w-full pl-10 pr-4 py-3 rounded-xl bg-white bg-opacity-20 text-white border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300">
+                                <option value="">Travelers</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4+ People</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary text-white py-3 px-6 rounded-xl font-bold transform hover:scale-105 active:scale-95 transition-all duration-300">
+                            <i class="fas fa-search mr-2"></i>
+                            Search Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Regional Destinations -->
+    <section id="destinations" class="py-20 region-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold text-gray-900 mb-6">
+                    Explore by Region
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Discover amazing destinations across Europe, Asia, and the Arab World
+                </p>
+            </div>
+            
+            <!-- Europe Section -->
+            <div class="mb-20">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="text-4xl mr-4">🇪🇺</div>
+                    <h3 class="font-playfair text-4xl font-bold text-gray-800">European Elegance</h3>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Paris -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Paris" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Paris</h4>
+                                    <p class="text-sm opacity-90 mb-3">City of Love & Romance</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $850</span>
+                                        <button onclick="bookDestination('paris')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- London -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="London" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">London</h4>
+                                    <p class="text-sm opacity-90 mb-3">Historic Charm & Modern Life</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $920</span>
+                                        <button onclick="bookDestination('london')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rome -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Rome" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Rome</h4>
+                                    <p class="text-sm opacity-90 mb-3">Eternal City of History</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $720</span>
+                                        <button onclick="bookDestination('rome')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Santorini -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Santorini" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Santorini</h4>
+                                    <p class="text-sm opacity-90 mb-3">Greek Island Paradise</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $580</span>
+                                        <button onclick="bookDestination('santorini')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Asia Section -->
+            <div class="mb-20">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="text-4xl mr-4">🌏</div>
+                    <h3 class="font-playfair text-4xl font-bold text-gray-800">Asian Adventures</h3>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Tokyo -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Tokyo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Tokyo</h4>
+                                    <p class="text-sm opacity-90 mb-3">Tech Capital & Culture</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $750</span>
+                                        <button onclick="bookDestination('tokyo')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Singapore -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Singapore" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Singapore</h4>
+                                    <p class="text-sm opacity-90 mb-3">Garden City Marvel</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $680</span>
+                                        <button onclick="bookDestination('singapore')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bali -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Bali" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Bali</h4>
+                                    <p class="text-sm opacity-90 mb-3">Island of Gods</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $450</span>
+                                        <button onclick="bookDestination('bali')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Maldives -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Maldives" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Maldives</h4>
+                                    <p class="text-sm opacity-90 mb-3">Tropical Paradise</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $1,280</span>
+                                        <button onclick="bookDestination('maldives')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arab World Section -->
+            <div class="mb-20">
+                <div class="flex items-center justify-center mb-12">
+                    <div class="text-4xl mr-4">🕌</div>
+                    <h3 class="font-playfair text-4xl font-bold text-gray-800">Arabian Treasures</h3>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Dubai -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Dubai" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Dubai</h4>
+                                    <p class="text-sm opacity-90 mb-3">City of Future & Luxury</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $670</span>
+                                        <button onclick="bookDestination('dubai')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marrakech -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Marrakech" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Marrakech</h4>
+                                    <p class="text-sm opacity-90 mb-3">Red City Magic</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $380</span>
+                                        <button onclick="bookDestination('marrakech')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cairo -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Cairo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Cairo</h4>
+                                    <p class="text-sm opacity-90 mb-3">Ancient Wonders</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $320</span>
+                                        <button onclick="bookDestination('cairo')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Doha -->
+                    <div class="destination-card group cursor-pointer">
+                        <div class="relative h-80 overflow-hidden rounded-2xl">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Doha" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="destination-overlay absolute inset-0 flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-2xl font-bold mb-2">Doha</h4>
+                                    <p class="text-sm opacity-90 mb-3">Pearl of the Gulf</p>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-lg font-semibold">From $520</span>
+                                        <button onclick="bookDestination('doha')" class="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 active:scale-95">
+                                            Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Smart Recommendations -->
+    <section id="recommendations" class="py-20 bg-white hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold text-gray-900 mb-6">
+                    <i class="fas fa-robot text-blue-600 mr-3"></i>
+                    Smart Recommendations for You
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    AI-powered suggestions based on your preferences and travel style
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8" id="recommendationGrid">
+                <!-- Recommendations will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Hotels -->
+    <section id="hotels" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-5xl font-bold text-gray-900 mb-6">
+                    <i class="fas fa-hotel text-blue-600 mr-3"></i>
+                    World's Finest Hotels
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Experience unparalleled luxury at the world's most prestigious hotels
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Maldives Resort -->
+                <div class="luxury-card overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Maldives Resort" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <button onclick="startVRHotelTour('maldives')" class="absolute top-4 right-4 glass-effect text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 active:scale-95">
+                            <i class="fas fa-vr-cardboard mr-1"></i>
+                            VR Tour
+                        </button>
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Available
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold mb-2">Maldives Luxury Resort</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600 font-semibold">(4.9/5)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Overwater villas with private pools and butler service</p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-wifi text-blue-500 mr-2"></i>
+                            <i class="fas fa-swimming-pool text-blue-500 mr-2"></i>
+                            <i class="fas fa-spa text-blue-500 mr-2"></i>
+                            <i class="fas fa-utensils text-blue-500 mr-2"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-blue-600">$2,500</span>
+                                <span class="text-gray-500">/night</span>
+                            </div>
+                            <button onclick="bookHotel('maldives')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold transform hover:scale-105 active:scale-95 transition-all duration-300">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swiss Alpine Lodge -->
+                <div class="luxury-card overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Swiss Alpine Resort" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <button onclick="startVRHotelTour('swiss')" class="absolute top-4 right-4 glass-effect text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 active:scale-95">
+                            <i class="fas fa-vr-cardboard mr-1"></i>
+                            VR Tour
+                        </button>
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Available
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold mb-2">Swiss Alpine Resort</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600 font-semibold">(4.8/5)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Luxury chalets with panoramic mountain views</p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-skiing text-blue-500 mr-2"></i>
+                            <i class="fas fa-hot-tub text-blue-500 mr-2"></i>
+                            <i class="fas fa-mountain text-blue-500 mr-2"></i>
+                            <i class="fas fa-fire text-blue-500 mr-2"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-blue-600">$1,800</span>
+                                <span class="text-gray-500">/night</span>
+                            </div>
+                            <button onclick="bookHotel('swiss')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold transform hover:scale-105 active:scale-95 transition-all duration-300">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parisian Palace -->
+                <div class="luxury-card overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Parisian Palace" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <button onclick="startVRHotelTour('paris')" class="absolute top-4 right-4 glass-effect text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 active:scale-95">
+                            <i class="fas fa-vr-cardboard mr-1"></i>
+                            VR Tour
+                        </button>
+                        <div class="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Limited
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold mb-2">Parisian Palace Hotel</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600 font-semibold">(4.9/5)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Historic luxury with Eiffel Tower views</p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-crown text-blue-500 mr-2"></i>
+                            <i class="fas fa-concierge-bell text-blue-500 mr-2"></i>
+                            <i class="fas fa-glass-cheers text-blue-500 mr-2"></i>
+                            <i class="fas fa-car text-blue-500 mr-2"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-blue-600">$3,200</span>
+                                <span class="text-gray-500">/night</span>
+                            </div>
+                            <button onclick="bookHotel('paris')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold transform hover:scale-105 active:scale-95 transition-all duration-300">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dubai Luxury Hotel -->
+                <div class="luxury-card overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Dubai Luxury Hotel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <button onclick="startVRHotelTour('dubai')" class="absolute top-4 right-4 glass-effect text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 active:scale-95">
+                            <i class="fas fa-vr-cardboard mr-1"></i>
+                            VR Tour
+                        </button>
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Available
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold mb-2">Burj Al Arab</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600 font-semibold">(4.9/5)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Icon of luxury in the heart of Dubai</p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-helicopter text-blue-500 mr-2"></i>
+                            <i class="fas fa-gem text-blue-500 mr-2"></i>
+                            <i class="fas fa-cocktail text-blue-500 mr-2"></i>
+                            <i class="fas fa-ship text-blue-500 mr-2"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-blue-600">$2,250</span>
+                                <span class="text-gray-500">/night</span>
+                            </div>
+                            <button onclick="bookHotel('dubai')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold transform hover:scale-105 active:scale-95 transition-all duration-300">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tokyo Luxury -->
+                <div class="luxury-card overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Tokyo Luxury Hotel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <button onclick="startVRHotelTour('tokyo')" class="absolute top-4 right-4 glass-effect text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 active:scale-95">
+                            <i class="fas fa-vr-cardboard mr-1"></i>
+                            VR Tour
+                        </button>
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Available
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold mb-2">Tokyo Imperial Hotel</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600 font-semibold">(4.8/5)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Authentic Japanese luxury with modern touches</p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-torii-gate text-blue-500 mr-2"></i>
+                            <i class="fas fa-leaf text-blue-500 mr-2"></i>
+                            <i class="fas fa-fish text-blue-500 mr-2"></i>
+                            <i class="fas fa-yin-yang text-blue-500 mr-2"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-blue-600">$1,920</span>
+                                <span class="text-gray-500">/night</span>
+                            </div>
+                            <button onclick="bookHotel('tokyo')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold transform hover:scale-105 active:scale-95 transition-all duration-300">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- London Luxury -->
+                <div class="luxury-card overflow-hidden group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="London Luxury Hotel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <button onclick="startVRHotelTour('london')" class="absolute top-4 right-4 glass-effect text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 active:scale-95">
+                            <i class="fas fa-vr-cardboard mr-1"></i>
+                            VR Tour
+                        </button>
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Available
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-playfair text-2xl font-bold mb-2">London Royal Palace</h3>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400 text-lg">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600 font-semibold">(4.9/5)</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Classic British elegance in the heart of London</p>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-chess-king text-blue-500 mr-2"></i>
+                            <i class="fas fa-umbrella text-blue-500 mr-2"></i>
+                            <i class="fas fa-theater-masks text-blue-500 mr-2"></i>
+                            <i class="fas fa-book text-blue-500 mr-2"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl font-bold text-blue-600">$2,600</span>
+                                <span class="text-gray-500">/night</span>
+                            </div>
+                            <button onclick="bookHotel('london')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold transform hover:scale-105 active:scale-95 transition-all duration-300">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Experiences -->
+    <section id="experiences" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-gray-900 mb-4">
+                    ✨ Unique Experiences
+                </h2>
+                <p class="text-xl text-gray-600">Once-in-a-lifetime adventures around the world</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="luxury-card rounded-2xl p-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">🚁</span>
+                        <h3 class="font-playfair text-2xl font-semibold">Private Helicopter Safari</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Exclusive aerial wildlife viewing in Kenya with champagne service</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$8,500</span>
+                        <button onclick="bookExperience('helicopter')" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors transform hover:scale-105 active:scale-95">
+                            Book Experience
+                        </button>
+                    </div>
+                </div>
+
+                <div class="luxury-card rounded-2xl p-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">🛥️</span>
+                        <h3 class="font-playfair text-2xl font-semibold">Private Yacht Charter</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">7-day Mediterranean cruise with personal chef and crew</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$45,000</span>
+                        <button onclick="bookExperience('yacht')" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors transform hover:scale-105 active:scale-95">
+                            Book Experience
+                        </button>
+                    </div>
+                </div>
+
+                <div class="luxury-card rounded-2xl p-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">🍷</span>
+                        <h3 class="font-playfair text-2xl font-semibold">Private Wine Estate Tour</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Exclusive access to Bordeaux's finest vineyards with master sommelier</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$3,200</span>
+                        <button onclick="bookExperience('wine')" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors transform hover:scale-105 active:scale-95">
+                            Book Experience
+                        </button>
+                    </div>
+                </div>
+
+                <div class="luxury-card rounded-2xl p-8">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">🎭</span>
+                        <h3 class="font-playfair text-2xl font-semibold">Private Opera Performance</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Exclusive performance at La Scala Milan with backstage access</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-green-600">$12,000</span>
+                        <button onclick="bookExperience('opera')" class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors transform hover:scale-105 active:scale-95">
+                            Book Experience
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VR Tours Section -->
+    <section id="vr-tours" class="py-16 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold mb-4">
+                    🥽 Virtual Reality Tours
+                </h2>
+                <p class="text-xl text-gray-300">Experience destinations before you travel</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-2xl p-6 text-center">
+                    <div class="text-6xl mb-4">🏝️</div>
+                    <h3 class="font-playfair text-xl font-semibold mb-2">Tropical Paradise</h3>
+                    <p class="text-gray-300 mb-4">360° tour of pristine beaches and crystal waters</p>
+                    <button onclick="startVRTour('tropical')" class="btn-secondary text-white px-6 py-2 rounded-full font-semibold w-full transform hover:scale-105 active:scale-95 transition-all duration-300">
+                        Start VR Tour
+                    </button>
+                </div>
+
+                <div class="bg-gray-800 rounded-2xl p-6 text-center">
+                    <div class="text-6xl mb-4">🏔️</div>
+                    <h3 class="font-playfair text-xl font-semibold mb-2">Mountain Peaks</h3>
+                    <p class="text-gray-300 mb-4">Immersive alpine adventure experience</p>
+                    <button onclick="startVRTour('mountain')" class="btn-secondary text-white px-6 py-2 rounded-full font-semibold w-full transform hover:scale-105 active:scale-95 transition-all duration-300">
+                        Start VR Tour
+                    </button>
+                </div>
+
+                <div class="bg-gray-800 rounded-2xl p-6 text-center">
+                    <div class="text-6xl mb-4">🏛️</div>
+                    <h3 class="font-playfair text-xl font-semibold mb-2">Historic Cities</h3>
+                    <p class="text-gray-300 mb-4">Walk through ancient streets and monuments</p>
+                    <button onclick="startVRTour('historic')" class="btn-secondary text-white px-6 py-2 rounded-full font-semibold w-full transform hover:scale-105 active:scale-95 transition-all duration-300">
+                        Start VR Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VR Modal -->
+    <div id="vrModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-2xl p-8 max-w-2xl mx-4">
+            <div class="text-center">
+                <div class="text-6xl mb-4">🥽</div>
+                <h3 class="font-playfair text-2xl font-bold mb-4">VR Experience Loading...</h3>
+                <div class="bg-gray-200 rounded-full h-4 mb-6">
+                    <div id="vrProgress" class="bg-gradient-to-r from-blue-500 to-purple-600 h-4 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                </div>
+                <p class="text-gray-600 mb-6" id="vrStatus">Initializing virtual reality environment...</p>
+                <button onclick="closeVRModal()" class="bg-gray-500 text-white px-6 py-2 rounded-full hover:bg-gray-600 transition-colors transform hover:scale-105 active:scale-95">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 w-full">
+            <h3 class="font-playfair text-2xl font-bold mb-6 text-center">Complete Your Booking</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Travel Dates</label>
+                    <input type="date" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                </div>
+                <div class="flex space-x-4 pt-4">
+                    <button onclick="confirmBooking()" class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 active:scale-95">
+                        Confirm Booking
+                    </button>
+                    <button onclick="closeBookingModal()" class="flex-1 bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition-colors transform hover:scale-105 active:scale-95">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-plane text-3xl text-blue-400 mr-3"></i>
+                        <h3 class="font-playfair text-2xl font-bold">TravelLux</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Your premium platform for discovering the world's most beautiful destinations and luxury hotels
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110 active:scale-95">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110 active:scale-95">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110 active:scale-95">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110 active:scale-95">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Popular Destinations</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Dubai</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Paris</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Maldives</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Tokyo</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">London</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Hotel Booking</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Flight Booking</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Tour Packages</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Unique Experiences</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">VR Tours</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span class="text-gray-300">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span class="text-gray-300">info@travellux.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-400 mr-3"></i>
+                            <span class="text-gray-300">New York, United States</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 TravelLux. All rights reserved. | 
+                    <a href="#" class="hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-white transition-colors transform hover:scale-105 active:scale-95 inline-block">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="TravelLux.JS"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9733224293201a82',t:'MTc1NTg3MzcxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

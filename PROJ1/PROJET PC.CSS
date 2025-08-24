@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #4c618269;
+  color: #000000;
+}
+
+/* Header */
+header {
+  background: #161b22;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 44px;
+  font-weight: bold;
+  color: #58a6ff;
+}
+
+nav a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #1975d1;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #58a6ff;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 60px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta {
+  background: #58a6ff;
+  color: rgb(5, 3, 88);
+  padding: 22px 35px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: #1f6feb;
+}
+
+/* Products */
+.products {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #7b9dcd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgb(13, 13, 186);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.card p {
+  margin: 20px 0;
+}
+
+.card span {
+  font-weight: bold;
+  color: #2ea043;
+}
+
+.buy-btn {
+  display: inline-block;
+  background: #2ea043;
+  color: rgb(0, 0, 0);
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover .buy-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Features */
+.features {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features-list {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.feature {
+  background: #9aa4b1;
+  padding: 30px 30px;
+  border-radius: 10px;
+  font-size: 1.1em;
+  box-shadow: 0 5px 10px rgb(167, 174, 182);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #cccfd164;
+  font-size: 0.9em;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: rgba(135, 133, 133, 0.995);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.instagram {
+  background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
+}
+
+.facebook {
+  background-color: #1877f2;
+}

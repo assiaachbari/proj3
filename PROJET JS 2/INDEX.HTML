@@ -1,0 +1,553 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServicePro - Meilleurs services à domicile et de bureau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="ServicePro.CSS">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
+                        <i class="fas fa-home text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-blue-800">ServicePro</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">Accueil</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">À propos</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                </div>
+                
+                <button class="btn-primary text-white px-6 py-2 rounded-lg font-medium">
+                    <i class="fas fa-phone mr-2"></i>
+                    Nous appeler
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Services à domicile et de bureau
+                        <span class="text-yellow-300">fiables</span>
+                    </h1>
+                    <p class="text-xl mb-8 opacity-90 leading-relaxed">
+                        Nous vous offrons les meilleurs services à domicile et de bureau avec une qualité élevée et des prix abordables. Équipe spécialisée avec plus de 10 ans d'expérience au service des clients.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <button onclick="scrollToServices()" class="btn-primary text-white px-8 py-4 rounded-lg font-bold text-lg">
+                            <i class="fas fa-list mr-2"></i>
+                            Voir les services
+                        </button>
+                        <button onclick="scrollToContact()" class="bg-white text-blue-800 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all">
+                            <i class="fas fa-phone mr-2"></i>
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center space-x-6 text-sm opacity-90">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-300"></i>
+                            <span>Service 24/7</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-green-300"></i>
+                            <span>Garantie qualité</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-green-300"></i>
+                            <span>Rapidité d'exécution</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Hero Image Illustration -->
+                    <div class="bg-white bg-opacity-10 rounded-3xl p-8 backdrop-blur-sm">
+                        <svg viewBox="0 0 400 300" class="w-full h-auto">
+                            <!-- House -->
+                            <rect x="50" y="120" width="300" height="150" fill="#ffffff" opacity="0.9" rx="10"/>
+                            <polygon points="50,120 200,50 350,120" fill="#1e40af" opacity="0.8"/>
+                            
+                            <!-- Windows -->
+                            <rect x="80" y="140" width="40" height="40" fill="#3b82f6" opacity="0.7" rx="5"/>
+                            <rect x="140" y="140" width="40" height="40" fill="#3b82f6" opacity="0.7" rx="5"/>
+                            <rect x="220" y="140" width="40" height="40" fill="#3b82f6" opacity="0.7" rx="5"/>
+                            <rect x="280" y="140" width="40" height="40" fill="#3b82f6" opacity="0.7" rx="5"/>
+                            
+                            <!-- Door -->
+                            <rect x="180" y="200" width="40" height="70" fill="#1e40af" opacity="0.8" rx="5"/>
+                            <circle cx="210" cy="235" r="3" fill="#fbbf24"/>
+                            
+                            <!-- Service icons floating around -->
+                            <circle cx="80" cy="80" r="20" fill="#10b981" opacity="0.8"/>
+                            <text x="80" y="85" text-anchor="middle" fill="white" font-size="16">🧹</text>
+                            
+                            <circle cx="320" cy="90" r="20" fill="#f59e0b" opacity="0.8"/>
+                            <text x="320" y="95" text-anchor="middle" fill="white" font-size="16">🔧</text>
+                            
+                            <circle cx="60" cy="200" r="18" fill="#ef4444" opacity="0.8"/>
+                            <text x="60" y="205" text-anchor="middle" fill="white" font-size="14">⚡</text>
+                            
+                            <circle cx="340" cy="180" r="18" fill="#8b5cf6" opacity="0.8"/>
+                            <text x="340" y="185" text-anchor="middle" fill="white" font-size="14">🏢</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-blue-800 mb-2">5000+</div>
+                    <div class="text-gray-600 font-medium">Clients satisfaits</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-800 mb-2">10+</div>
+                    <div class="text-gray-600 font-medium">Années d'expérience</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-800 mb-2">50+</div>
+                    <div class="text-gray-600 font-medium">Spécialistes</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-800 mb-2">24/7</div>
+                    <div class="text-gray-600 font-medium">Service continu</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl font-bold text-gray-800 mb-4">Nos Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Nous offrons une gamme complète de services à domicile et de bureau</p>
+            </div>
+            
+            <!-- Home Services -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Services à Domicile</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-broom text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Nettoyage de Maison</h4>
+                        <p class="text-gray-600 mb-4">Nettoyage complet de toutes les parties de la maison avec les équipements les plus récents et des produits sûrs</p>
+                        <div class="text-2xl font-bold text-blue-600 mb-4">À partir de 50€</div>
+                        <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-wrench text-green-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Plomberie</h4>
+                        <p class="text-gray-600 mb-4">Réparation de tous les problèmes de plomberie et fuites avec une grande expertise</p>
+                        <div class="text-2xl font-bold text-green-600 mb-4">À partir de 75€</div>
+                        <button class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bolt text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Électricité</h4>
+                        <p class="text-gray-600 mb-4">Résolution de tous les problèmes électriques et installation d'éclairage</p>
+                        <div class="text-2xl font-bold text-yellow-600 mb-4">À partir de 60€</div>
+                        <button class="w-full bg-yellow-600 text-white py-2 rounded-lg hover:bg-yellow-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-snowflake text-purple-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Climatisation</h4>
+                        <p class="text-gray-600 mb-4">Nettoyage et maintenance de tous types d'appareils de climatisation</p>
+                        <div class="text-2xl font-bold text-purple-600 mb-4">À partir de 40€</div>
+                        <button class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-red-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Cuisine à Domicile</h4>
+                        <p class="text-gray-600 mb-4">Préparation de repas maison délicieux et variés</p>
+                        <div class="text-2xl font-bold text-red-600 mb-4">À partir de 100€</div>
+                        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-green-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Jardinage</h4>
+                        <p class="text-gray-600 mb-4">Conception et entretien de jardins et espaces verts</p>
+                        <div class="text-2xl font-bold text-green-600 mb-4">À partir de 125€</div>
+                        <button class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Office Services -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Services de Bureau</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-building text-blue-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Nettoyage de Bureaux</h4>
+                        <p class="text-gray-600 mb-4">Nettoyage complet des bureaux et espaces commerciaux</p>
+                        <div class="text-2xl font-bold text-blue-600 mb-4">À partir de 75€</div>
+                        <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-laptop text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Maintenance Informatique</h4>
+                        <p class="text-gray-600 mb-4">Maintenance et réparation d'ordinateurs et réseaux</p>
+                        <div class="text-2xl font-bold text-indigo-600 mb-4">À partir de 50€</div>
+                        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-gray-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Services de Sécurité</h4>
+                        <p class="text-gray-600 mb-4">Gardiennage et sécurité pour bureaux et établissements commerciaux</p>
+                        <div class="text-2xl font-bold text-gray-600 mb-4">À partir de 150€</div>
+                        <button class="w-full bg-gray-600 text-white py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-print text-teal-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Maintenance Imprimantes</h4>
+                        <p class="text-gray-600 mb-4">Réparation et maintenance de tous types d'imprimantes</p>
+                        <div class="text-2xl font-bold text-teal-600 mb-4">À partir de 40€</div>
+                        <button class="w-full bg-teal-600 text-white py-2 rounded-lg hover:bg-teal-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-wifi text-orange-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Configuration Réseaux</h4>
+                        <p class="text-gray-600 mb-4">Installation et maintenance de réseaux Internet et communications</p>
+                        <div class="text-2xl font-bold text-orange-600 mb-4">À partir de 100€</div>
+                        <button class="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl p-6 text-center">
+                        <div class="w-20 h-20 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-window-maximize text-cyan-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-3">Nettoyage Vitres</h4>
+                        <p class="text-gray-600 mb-4">Nettoyage des fenêtres et façades vitrées</p>
+                        <div class="text-2xl font-bold text-cyan-600 mb-4">À partir de 30€</div>
+                        <button class="w-full bg-cyan-600 text-white py-2 rounded-lg hover:bg-cyan-700 transition-colors">
+                            Réserver maintenant
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl font-bold text-gray-800 mb-4">Pourquoi nous choisir ?</h2>
+                <p class="text-xl text-gray-600">Nous offrons les meilleurs services avec les plus hauts standards de qualité</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-check feature-icon text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Équipe Spécialisée</h4>
+                    <p class="text-gray-600">Spécialistes formés et très expérimentés</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock feature-icon text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Service Rapide</h4>
+                    <p class="text-gray-600">Nous arrivons chez vous dans les plus brefs délais</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt feature-icon text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Garantie Qualité</h4>
+                    <p class="text-gray-600">Tous nos services sont garantis 100%</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-money-bill-wave feature-icon text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">Prix Abordables</h4>
+                    <p class="text-gray-600">Les meilleurs prix du marché</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl font-bold text-gray-800 mb-4">Avis Clients</h2>
+                <p class="text-xl text-gray-600">Ce que disent nos clients de nos services</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                            P.M
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="font-bold text-gray-800">Pierre Martin</h5>
+                            <div class="text-yellow-500">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Service excellent et rapide. L'équipe est très professionnelle et les prix sont raisonnables. Je recommande vivement !"</p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+                            M.D
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="font-bold text-gray-800">Marie Dubois</h5>
+                            <div class="text-yellow-500">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Expérience fantastique ! La maison a été nettoyée parfaitement et l'équipe était polie et organisée."</p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                            J.L
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="font-bold text-gray-800">Jean Leroy</h5>
+                            <div class="text-yellow-500">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"La meilleure entreprise de services avec laquelle j'ai travaillé. Qualité élevée et respect des délais excellent."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 hero-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Contactez-nous</h2>
+                <p class="text-xl opacity-90">Nous sommes là pour vous servir 24h/24</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Informations de Contact</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Téléphone</h4>
+                                <p class="opacity-90">01 23 45 67 89</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="opacity-90">contact@servicepro.fr</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Adresse</h4>
+                                <p class="opacity-90">Paris, France</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Heures d'ouverture</h4>
+                                <p class="opacity-90">24 heures - 7 jours sur 7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
+                    <h3 class="text-2xl font-bold mb-6">Réservez votre service maintenant</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Nom complet" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                        </div>
+                        
+                        <div>
+                            <input type="tel" placeholder="Numéro de téléphone" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                        </div>
+                        
+                        <div>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                                <option value="" class="text-gray-800">Choisir le type de service</option>
+                                <option value="home" class="text-gray-800">Services à domicile</option>
+                                <option value="office" class="text-gray-800">Services de bureau</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <textarea placeholder="Détails du service demandé" rows="4" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-white text-blue-800 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
+                            <i class="fas fa-home text-white"></i>
+                        </div>
+                        <span class="text-2xl font-bold">ServicePro</span>
+                    </div>
+                    <p class="text-gray-400">
+                        La meilleure plateforme pour les services à domicile et de bureau en France
+                    </p>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold text-lg mb-4">Nos Services</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Services à domicile</li>
+                        <li>Services de bureau</li>
+                        <li>Maintenance générale</li>
+                        <li>Nettoyage spécialisé</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold text-lg mb-4">Entreprise</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>À propos</li>
+                        <li>Notre équipe</li>
+                        <li>Conditions générales</li>
+                        <li>Politique de confidentialité</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold text-lg mb-4">Suivez-nous</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-900 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ServicePro. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ServicePro.JS"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96fb1f140378560b',t:'MTc1NTI4NjM4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

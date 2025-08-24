@@ -1,0 +1,297 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffef5;
+}
+
+/* 🔰 NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffce00;
+  box-shadow: 0 3px 4px rgba(250, 248, 93, 0.288);
+  padding: 10px 10px;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #005900;
+  margin: 6px;
+  padding: 3px;;
+}
+
+.login-btn {
+  background-color: rgb(5, 148, 0);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #444;
+}
+
+/* ✅ MAIN TITLE */
+.navbar-center {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.navbar-center h1,
+.navbar-center h2 {
+  font-size: 1.8rem;
+  color: #206407;
+  margin-bottom: 15px;
+}
+
+.location-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.location-input input {
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  width: 300px;
+  max-width: 80%;
+}
+
+.location-input button {
+  background-color: #007517;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.location-input button:hover {
+  background-color: #333;
+}
+
+/* ⬇️ عند التمرير */
+.navbar.shrink {
+  padding: 10px 30px;
+}
+
+/* 🟡 كروت الفئات */
+.cards-section {
+  margin-top: 280px;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 40px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 180px;
+}
+
+.card:hover {
+  background-color: #fff176;
+  transform: scale(1.05);
+}
+/* 🏙️ Meilleures Catégories */
+.best-categories {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.best-categories .icon img {
+  width: 80px;
+  margin-bottom: 15px;
+  filter: hue-rotate(-20deg) brightness(1.1);
+}
+
+.best-categories h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.category-tags span {
+  background-color: #fff3d0;
+  color: #000;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-tags span:hover {
+  background-color: #ffce00;
+  transform: scale(1.05);
+}
+/* 💼 Opportunités */
+.opportunites {
+  background-color: #e6f7f5;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.opportunites .op-icon img {
+  width: 60px;
+  margin-bottom: 10px;
+  filter: hue-rotate(-30deg);
+}
+
+.opportunites h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.op-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.op-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 280px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+.op-card:hover {
+  transform: translateY(-8px);
+}
+
+.op-card img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 180px;
+  margin-bottom: 15px;
+}
+
+.op-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.op-card p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.op-card button {
+  background-color: #00b894;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.op-card button:hover {
+  background-color: #009f80;
+}
+/* 🔻 Footer بسيط */
+.simple-footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+.simple-footer h2 {
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links div h4 {
+  margin-bottom: 10px;
+  color: #ffce00;
+}
+
+.footer-links div p {
+  margin: 5px 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.footer-links div p:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.app-icons img {
+  width: 40px;
+  margin: 10px;
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.langue {
+  margin-top: 20px;
+}
+
+.langue select {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  border: none;
+}

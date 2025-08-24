@@ -1,0 +1,1021 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduExcellence - Plateforme Éducative Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="EduExcellence.CSS">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-lg"></i>
+                        </div>
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">EduExcellence</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#accueil" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 text-sm">Accueil</a>
+                        <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 text-sm">Services</a>
+                        <a href="#cours" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 text-sm">Formations</a>
+                        <a href="#temoignages" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 text-sm">Témoignages</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 px-4 py-2 text-sm">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition duration-300">
+                        Se connecter
+                    </button>
+                    <button class="btn-primary text-white px-6 py-3 rounded-xl font-medium">
+                        Commencer gratuitement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-bg text-white py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <span class="text-sm font-medium">🎯 Plus de 10,000 étudiants nous font confiance</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Excellez dans vos
+                        <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">études</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100 leading-relaxed">
+                        Rejoignez la plateforme éducative de référence. Cours personnalisés, professeurs experts et suivi individualisé pour garantir votre réussite.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <button onclick="scrollToSection('services')" class="btn-primary text-white px-8 py-4 rounded-xl font-semibold text-lg">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Commencer maintenant
+                        </button>
+                        <button onclick="scrollToSection('cours')" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition duration-300">
+                            <i class="fas fa-play mr-2"></i>
+                            Voir la démo
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-8 text-sm">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span>Essai gratuit 7 jours</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-green-400 mr-2"></i>
+                            <span>Satisfait ou remboursé</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="floating-element">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Étudiants en formation" 
+                             class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-trophy text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-800">98% de réussite</div>
+                                <div class="text-sm text-gray-600">Taux de satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-800">10,000+</div>
+                                <div class="text-sm text-gray-600">Étudiants actifs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="stats-counter">10K+</div>
+                    <div class="text-gray-600 font-medium">Étudiants formés</div>
+                </div>
+                <div class="fade-in">
+                    <div class="stats-counter">500+</div>
+                    <div class="text-gray-600 font-medium">Professeurs experts</div>
+                </div>
+                <div class="fade-in">
+                    <div class="stats-counter">98%</div>
+                    <div class="text-gray-600 font-medium">Taux de réussite</div>
+                </div>
+                <div class="fade-in">
+                    <div class="stats-counter">24/7</div>
+                    <div class="text-gray-600 font-medium">Support disponible</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-blue-100 text-blue-800 rounded-full px-4 py-2 mb-4">
+                    <i class="fas fa-star mr-2"></i>
+                    <span class="text-sm font-medium">Services Premium</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Des solutions sur mesure pour
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">votre réussite</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez nos services éducatifs conçus par des experts pour maximiser votre potentiel d'apprentissage
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card rounded-2xl shadow-xl p-8 card-elegant relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-bl-3xl opacity-10"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-user-graduate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Cours Particuliers</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Accompagnement personnalisé avec nos professeurs certifiés. Méthodes adaptées à votre profil d'apprentissage.</p>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-blue-600">À partir de 25€/h</span>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <button onclick="openServiceModal('particuliers')" class="btn-primary text-white px-6 py-3 rounded-xl font-medium w-full">
+                        <i class="fas fa-arrow-right mr-2"></i>
+                        Réserver un cours
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card rounded-2xl shadow-xl p-8 card-elegant relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-bl-3xl opacity-10"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Cours en Groupe</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Apprentissage collaboratif en petits groupes de 4-6 étudiants. Émulation et entraide garanties.</p>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-green-600">À partir de 15€/h</span>
+                        <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Populaire
+                        </div>
+                    </div>
+                    <button onclick="openServiceModal('groupe')" class="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                        <i class="fas fa-arrow-right mr-2"></i>
+                        Rejoindre un groupe
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card rounded-2xl shadow-xl p-8 card-elegant relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-bl-3xl opacity-10"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Formation en Ligne</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Plateforme interactive disponible 24h/24. Cours vidéo, exercices et suivi en temps réel.</p>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-purple-600">À partir de 19€/mois</span>
+                        <div class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Nouveau
+                        </div>
+                    </div>
+                    <button onclick="openServiceModal('enligne')" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                        <i class="fas fa-arrow-right mr-2"></i>
+                        Essai gratuit 7 jours
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card rounded-2xl shadow-xl p-8 card-elegant relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-bl-3xl opacity-10"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Suivi Personnalisé</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Évaluation continue, rapports détaillés et conseils personnalisés pour optimiser vos progrès.</p>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-orange-600">Inclus</span>
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <button onclick="openServiceModal('suivi')" class="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                        <i class="fas fa-arrow-right mr-2"></i>
+                        Découvrir le suivi
+                    </button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card rounded-2xl shadow-xl p-8 card-elegant relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-bl-3xl opacity-10"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Préparation Examens</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Préparation intensive pour le bac, concours et examens universitaires. Taux de réussite de 98%.</p>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-yellow-600">À partir de 35€/h</span>
+                        <div class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                            98% réussite
+                        </div>
+                    </div>
+                    <button onclick="openServiceModal('examens')" class="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                        <i class="fas fa-arrow-right mr-2"></i>
+                        Préparer mon examen
+                    </button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card rounded-2xl shadow-xl p-8 card-elegant relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-bl-3xl opacity-10"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Langues Étrangères</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Apprentissage avec des professeurs natifs. Anglais, espagnol, allemand et plus encore.</p>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-3xl font-bold text-indigo-600">À partir de 22€/h</span>
+                        <div class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Natifs
+                        </div>
+                    </div>
+                    <button onclick="openServiceModal('langues')" class="bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                        <i class="fas fa-arrow-right mr-2"></i>
+                        Choisir ma langue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="cours" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-purple-100 text-purple-800 rounded-full px-4 py-2 mb-4">
+                    <i class="fas fa-book-open mr-2"></i>
+                    <span class="text-sm font-medium">Formations Certifiantes</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Nos formations les plus
+                    <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">demandées</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez notre catalogue de formations conçues par des experts et adaptées aux exigences actuelles
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Formation 1 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-elegant border border-gray-100">
+                    <div class="course-image h-48" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="course-icon h-full flex items-center justify-center">
+                            <i class="fas fa-calculator text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Mathématiques</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm ml-2">(4.9)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Mathématiques Avancées</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Maîtrisez l'algèbre, la géométrie et les calculs avancés avec nos méthodes pédagogiques innovantes.</p>
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <span class="text-3xl font-bold text-blue-600">29€</span>
+                                <span class="text-gray-500">/heure</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">1,247 étudiants</div>
+                                <div class="text-sm text-green-600 font-medium">✓ Certificat inclus</div>
+                            </div>
+                        </div>
+                        <button onclick="enrollCourse('mathematiques')" class="btn-primary text-white px-6 py-3 rounded-xl font-medium w-full">
+                            <i class="fas fa-play mr-2"></i>
+                            Commencer le cours
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formation 2 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-elegant border border-gray-100">
+                    <div class="course-image h-48" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="course-icon h-full flex items-center justify-center">
+                            <i class="fas fa-atom text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Sciences</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm ml-2">(4.8)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Sciences Physiques</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Physique et chimie expliquées simplement avec des expériences pratiques et des applications concrètes.</p>
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <span class="text-3xl font-bold text-green-600">32€</span>
+                                <span class="text-gray-500">/heure</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">892 étudiants</div>
+                                <div class="text-sm text-blue-600 font-medium">🆕 Nouveau programme</div>
+                            </div>
+                        </div>
+                        <button onclick="enrollCourse('sciences')" class="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                            <i class="fas fa-play mr-2"></i>
+                            Commencer le cours
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formation 3 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-elegant border border-gray-100">
+                    <div class="course-image h-48" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="course-icon h-full flex items-center justify-center">
+                            <i class="fas fa-feather-alt text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Littérature</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm ml-2">(4.9)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Français & Littérature</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Perfectionnez votre expression écrite et orale, analysez les grands textes de la littérature française.</p>
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <span class="text-3xl font-bold text-red-600">27€</span>
+                                <span class="text-gray-500">/heure</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">1,456 étudiants</div>
+                                <div class="text-sm text-yellow-600 font-medium">⭐ Recommandé</div>
+                            </div>
+                        </div>
+                        <button onclick="enrollCourse('francais')" class="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                            <i class="fas fa-play mr-2"></i>
+                            Commencer le cours
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formation 4 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-elegant border border-gray-100">
+                    <div class="course-image h-48" style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="course-icon h-full flex items-center justify-center">
+                            <i class="fas fa-globe-americas text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Histoire-Géo</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm ml-2">(4.7)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Histoire & Géographie</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Explorez les grandes périodes historiques et comprenez les enjeux géopolitiques contemporains.</p>
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <span class="text-3xl font-bold text-yellow-600">25€</span>
+                                <span class="text-gray-500">/heure</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">734 étudiants</div>
+                                <div class="text-sm text-green-600 font-medium">✓ Méthodes visuelles</div>
+                            </div>
+                        </div>
+                        <button onclick="enrollCourse('histoire')" class="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                            <i class="fas fa-play mr-2"></i>
+                            Commencer le cours
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formation 5 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-elegant border border-gray-100">
+                    <div class="course-image h-48" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="course-icon h-full flex items-center justify-center">
+                            <i class="fas fa-comments text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Langues</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm ml-2">(4.8)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Anglais Intensif</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Perfectionnez votre anglais avec des professeurs natifs. Conversation, grammaire et préparation aux certifications.</p>
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <span class="text-3xl font-bold text-purple-600">30€</span>
+                                <span class="text-gray-500">/heure</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">2,156 étudiants</div>
+                                <div class="text-sm text-purple-600 font-medium">🎯 Professeurs natifs</div>
+                            </div>
+                        </div>
+                        <button onclick="enrollCourse('anglais')" class="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                            <i class="fas fa-play mr-2"></i>
+                            Commencer le cours
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formation 6 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-elegant border border-gray-100">
+                    <div class="course-image h-48" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="course-icon h-full flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-white text-4xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Économie</span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-gray-600 text-sm ml-2">(4.6)</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Sciences Économiques</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Comprenez les mécanismes économiques, la microéconomie et macroéconomie avec des cas pratiques.</p>
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <span class="text-3xl font-bold text-indigo-600">28€</span>
+                                <span class="text-gray-500">/heure</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">567 étudiants</div>
+                                <div class="text-sm text-indigo-600 font-medium">📊 Cas pratiques</div>
+                            </div>
+                        </div>
+                        <button onclick="enrollCourse('economie')" class="bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white px-6 py-3 rounded-xl font-medium w-full transition duration-300">
+                            <i class="fas fa-play mr-2"></i>
+                            Commencer le cours
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-green-100 text-green-800 rounded-full px-4 py-2 mb-4">
+                    <i class="fas fa-heart mr-2"></i>
+                    <span class="text-sm font-medium">Témoignages</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Ce que disent nos
+                    <span class="bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">étudiants</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez les témoignages authentiques de nos étudiants qui ont transformé leur parcours éducatif avec nous
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Témoignage 1 -->
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                             alt="Sarah Martin" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah Martin</h4>
+                            <p class="text-gray-600 text-sm">Étudiante en Terminale S</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Grâce aux cours de mathématiques d'EduExcellence, j'ai enfin compris les concepts qui me posaient problème. Mon professeur était patient et a su adapter sa méthode à mon rythme d'apprentissage."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        Note obtenue au bac : 18/20 en maths
+                    </div>
+                </div>
+
+                <!-- Témoignage 2 -->
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                             alt="Thomas Dubois" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Thomas Dubois</h4>
+                            <p class="text-gray-600 text-sm">Étudiant en Prépa HEC</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "La préparation aux concours avec EduExcellence m'a donné toutes les clés pour réussir. Les méthodes de travail et les conseils personnalisés ont fait la différence."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        Admis à HEC Paris
+                    </div>
+                </div>
+
+                <!-- Témoignage 3 -->
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                             alt="Emma Leroy" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Emma Leroy</h4>
+                            <p class="text-gray-600 text-sm">Étudiante en 1ère L</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Les cours de français m'ont aidée à développer mon analyse littéraire et ma rédaction. Je me sens maintenant beaucoup plus confiante pour mes dissertations."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        Moyenne passée de 12 à 16/20
+                    </div>
+                </div>
+
+                <!-- Témoignage 4 -->
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                             alt="Lucas Moreau" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Lucas Moreau</h4>
+                            <p class="text-gray-600 text-sm">Étudiant en Terminale ES</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "La plateforme en ligne est fantastique ! Je peux réviser à mon rythme et les exercices interactifs rendent l'apprentissage vraiment plus agréable."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        Progrès de 4 points en SES
+                    </div>
+                </div>
+
+                <!-- Témoignage 5 -->
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                             alt="Camille Rousseau" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Camille Rousseau</h4>
+                            <p class="text-gray-600 text-sm">Étudiante en 3ème</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Les cours d'anglais avec des professeurs natifs ont complètement transformé mon niveau. Je peux maintenant tenir une conversation fluide !"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        Niveau B2 atteint en 6 mois
+                    </div>
+                </div>
+
+                <!-- Témoignage 6 -->
+                <div class="testimonial-card rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" 
+                             alt="Antoine Bernard" 
+                             class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Antoine Bernard</h4>
+                            <p class="text-gray-600 text-sm">Étudiant en Terminale S</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "Le suivi personnalisé m'a permis d'identifier mes lacunes et de les combler efficacement. Mes parents sont ravis de voir mes progrès constants."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        Mention Très Bien au bac
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-blue-100 text-blue-800 rounded-full px-4 py-2 mb-4">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span class="text-sm font-medium">Nous contacter</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Prêt à commencer votre
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">parcours ?</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Notre équipe d'experts est là pour vous accompagner. Contactez-nous pour une consultation gratuite et personnalisée
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Parlons de votre projet</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-1">Appelez-nous</h4>
+                                    <p class="text-gray-600 mb-2">Du lundi au vendredi, 9h-19h</p>
+                                    <a href="tel:+33123456789" class="text-blue-600 font-medium hover:text-blue-700">+33 1 23 45 67 89</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-1">Écrivez-nous</h4>
+                                    <p class="text-gray-600 mb-2">Réponse sous 24h garantie</p>
+                                    <a href="mailto:contact@eduexcellence.fr" class="text-green-600 font-medium hover:text-green-700">contact@eduexcellence.fr</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-1">Visitez-nous</h4>
+                                    <p class="text-gray-600 mb-2">Centre de formation principal</p>
+                                    <p class="text-purple-600 font-medium">123 Avenue de l'Excellence<br>75008 Paris, France</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horaires -->
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Horaires d'ouverture</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Lundi - Vendredi</span>
+                                <span class="font-medium text-gray-900">9h00 - 19h00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Samedi</span>
+                                <span class="font-medium text-gray-900">9h00 - 17h00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Dimanche</span>
+                                <span class="font-medium text-gray-900">Fermé</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Demande de renseignements</h3>
+                        <p class="text-gray-600">Remplissez ce formulaire et nous vous recontacterons rapidement</p>
+                    </div>
+
+                    <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Sujet *</label>
+                            <select id="subject" name="subject" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                                <option value="">Choisissez un sujet</option>
+                                <option value="info">Demande d'information générale</option>
+                                <option value="inscription">Inscription à un cours</option>
+                                <option value="devis">Demande de devis personnalisé</option>
+                                <option value="support">Support technique</option>
+                                <option value="partenariat">Partenariat</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      placeholder="Décrivez-nous votre projet ou vos besoins..."
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300 resize-none"></textarea>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="consent" name="consent" required 
+                                   class="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <label for="consent" class="text-sm text-gray-600">
+                                J'accepte que mes données soient utilisées pour me recontacter concernant ma demande. *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary text-white px-8 py-4 rounded-xl font-medium w-full text-lg">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Envoyer ma demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-lg"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">EduExcellence</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Votre partenaire de confiance pour l'excellence éducative. Plus de 10,000 étudiants nous font confiance depuis 2020.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-400 transition duration-300">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-600 transition duration-300">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-700 transition duration-300">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Nos Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Cours particuliers
+                        </a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Cours en groupe
+                        </a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Formation en ligne
+                        </a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Préparation examens
+                        </a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Langues étrangères
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Formations -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Formations</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#cours" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Mathématiques
+                        </a></li>
+                        <li><a href="#cours" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Sciences physiques
+                        </a></li>
+                        <li><a href="#cours" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Français & Littérature
+                        </a></li>
+                        <li><a href="#cours" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Histoire & Géographie
+                        </a></li>
+                        <li><a href="#cours" class="text-gray-300 hover:text-blue-400 transition duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2"></i>
+                            Anglais intensif
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Contact & Support</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+33 1 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span>contact@eduexcellence.fr</span>
+                        </li>
+                        <li class="flex items-start text-gray-300">
+                            <i class="fas fa-map-marker-alt text-blue-400 mr-3 mt-1"></i>
+                            <span>123 Avenue de l'Excellence<br>75008 Paris, France</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-6">
+                        <h5 class="text-sm font-semibold mb-3 text-white">Liens utiles</h5>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 text-sm">Centre d'aide</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 text-sm">FAQ</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300 text-sm">Politique de confidentialité</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                        <p>&copy; 2024 EduExcellence. Tous droits réservés. | Plateforme éducative certifiée</p>
+                    </div>
+                    <div class="flex items-center space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Mentions légales</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">CGV</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300">Plan du site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="serviceModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4">
+            <div class="text-center">
+                <div id="modalIcon" class="text-6xl mb-4"></div>
+                <h3 id="modalTitle" class="text-2xl font-bold text-gray-800 mb-4"></h3>
+                <p id="modalDescription" class="text-gray-600 mb-6"></p>
+                <div class="space-y-3">
+                    <button onclick="closeModal()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition duration-300">
+                        Demander un devis
+                    </button>
+                    <button onclick="closeModal()" class="w-full border border-gray-300 text-gray-700 py-2 rounded-lg font-medium hover:bg-gray-50 transition duration-300">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="EduExcellence.JS"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96fab5e131efecae',t:'MTc1NTI4MjA3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

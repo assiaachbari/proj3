@@ -1,0 +1,264 @@
+ <!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialConnect - Connexion ou Inscription</title>
+    <link rel="stylesheet" href="SocialConnect.CSS">
+</head>
+<body>
+    <!-- شريط التنقل العلوي -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-right">
+                <a href="#" class="facebook-logo">SocialConnect</a>
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-box" placeholder="Rechercher sur SocialConnect" id="searchBox">
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <div class="nav-item active" title="الصفحة الرئيسية">🏠</div>
+                <div class="nav-item" title="الأصدقاء">👥</div>
+                <div class="nav-item" title="المجموعات">👥</div>
+                <div class="nav-item" title="الألعاب">🎮</div>
+            </div>
+            
+            <div class="nav-left">
+                <select class="language-selector" id="languageSelector">
+                    <option value="fr" selected>Français</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+                <button class="nav-button">Créer</button>
+                <button class="nav-button">💬</button>
+                <button class="nav-button">🔔</button>
+                <div class="profile-pic">M</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="main-content">
+        <!-- الشريط الجانبي الأيسر -->
+        <div class="left-sidebar">
+            <div class="sidebar-item">
+                <div class="profile-pic">M</div>
+                <span class="sidebar-text">Michel Dubois</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <div class="sidebar-icon" style="background: #1877f2;">👥</div>
+                <span class="sidebar-text">Amis</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <div class="sidebar-icon" style="background: #42a5f5;">👥</div>
+                <span class="sidebar-text">Groupes</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <div class="sidebar-icon" style="background: #ff6b6b;">🛒</div>
+                <span class="sidebar-text">Marketplace</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <div class="sidebar-icon" style="background: #4ecdc4;">📺</div>
+                <span class="sidebar-text">Watch</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <div class="sidebar-icon" style="background: #45b7d1;">📅</div>
+                <span class="sidebar-text">Événements</span>
+            </div>
+            
+            <div class="sidebar-item">
+                <div class="sidebar-icon see-more">⬇️</div>
+                <span class="sidebar-text">Voir plus</span>
+            </div>
+            
+            <div class="shortcuts-section">
+                <h3 class="section-title">Vos raccourcis</h3>
+                <div class="sidebar-item">
+                    <div class="sidebar-icon" style="background: #96ceb4;">💻</div>
+                    <span class="sidebar-text">Développeurs Web</span>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-icon" style="background: #feca57;">⚽</div>
+                    <span class="sidebar-text">Football France</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- المنطقة الوسطى -->
+        <div class="center-content">
+            <!-- منشئ المنشورات -->
+            <div class="post-creator fade-in">
+                <div class="post-input-container">
+                    <div class="profile-pic">M</div>
+                    <input type="text" class="post-input" placeholder="À quoi pensez-vous, Michel ?" id="postInput">
+                </div>
+                <div class="post-actions">
+                    <div class="post-action">
+                        <span style="color: #45bd62;">📹</span>
+                        Vidéo en direct
+                    </div>
+                    <div class="post-action">
+                        <span style="color: #45bd62;">📷</span>
+                        Photo/vidéo
+                    </div>
+                    <div class="post-action">
+                        <span style="color: #f7b928;">😊</span>
+                        Humeur/activité
+                    </div>
+                </div>
+            </div>
+
+            <!-- المنشورات -->
+            <div class="post fade-in">
+                <div class="post-header">
+                    <div class="post-avatar">A</div>
+                    <div class="post-info">
+                        <div class="post-author">Antoine Martin</div>
+                        <div class="post-time">Il y a 5 minutes · 🌍</div>
+                    </div>
+                    <div style="margin-left: auto; cursor: pointer; padding: 8px; border-radius: 50%; color: #65676b;">⋯</div>
+                </div>
+                <div class="post-content">
+                    Bonjour tout le monde ! Je vous souhaite une excellente journée pleine de réussites et de bonheur. N'oubliez pas de sourire aujourd'hui ! 😊
+                </div>
+                <div class="post-actions-bar">
+                    <button class="post-action-btn" onclick="toggleLike(this)">
+                        <span>👍</span> J'aime
+                    </button>
+                    <button class="post-action-btn" onclick="openMessenger()">
+                        <span>💬</span> Commenter
+                    </button>
+                    <button class="post-action-btn">
+                        <span>📤</span> Partager
+                    </button>
+                </div>
+            </div>
+
+            <div class="post fade-in">
+                <div class="post-header">
+                    <div class="post-avatar">S</div>
+                    <div class="post-info">
+                        <div class="post-author">Sophie Leroy</div>
+                        <div class="post-time">Il y a 15 minutes · 🌍</div>
+                    </div>
+                    <div style="margin-left: auto; cursor: pointer; padding: 8px; border-radius: 50%; color: #65676b;">⋯</div>
+                </div>
+                <div class="post-content">
+                    Merci à tous ceux qui m'ont aidé à terminer le projet ! La collaboration est la clé du succès 🚀
+                </div>
+                <div class="post-actions-bar">
+                    <button class="post-action-btn" onclick="toggleLike(this)">
+                        <span>👍</span> J'aime
+                    </button>
+                    <button class="post-action-btn" onclick="openMessenger()">
+                        <span>💬</span> Commenter
+                    </button>
+                    <button class="post-action-btn">
+                        <span>📤</span> Partager
+                    </button>
+                </div>
+            </div>
+
+            <div class="post fade-in">
+                <div class="post-header">
+                    <div class="post-avatar">L</div>
+                    <div class="post-info">
+                        <div class="post-author">Lucas Moreau</div>
+                        <div class="post-time">Il y a 30 minutes · 🌍</div>
+                    </div>
+                    <div style="margin-left: auto; cursor: pointer; padding: 8px; border-radius: 50%; color: #65676b;">⋯</div>
+                </div>
+                <div class="post-content">
+                    Belle journée pour apprendre ! J'ai appris quelque chose de nouveau en programmation aujourd'hui. L'apprentissage continu est la voie du progrès 💻
+                </div>
+                <div class="post-actions-bar">
+                    <button class="post-action-btn" onclick="toggleLike(this)">
+                        <span>👍</span> J'aime
+                    </button>
+                    <button class="post-action-btn" onclick="openMessenger()">
+                        <span>💬</span> Commenter
+                    </button>
+                    <button class="post-action-btn">
+                        <span>📤</span> Partager
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- الشريط الجانبي الأيمن -->
+        <div class="right-sidebar">
+            <div class="contacts-section">
+                <div class="contacts-header">
+                    <span class="contacts-title">Contacts</span>
+                    <span style="cursor: pointer; color: #65676b;">⋯</span>
+                </div>
+                
+                <div class="contact-item" onclick="openMessenger('Antoine Martin')">
+                    <div class="contact-avatar">
+                        A
+                        <div class="online-indicator"></div>
+                    </div>
+                    <span class="contact-name">Antoine Martin</span>
+                </div>
+                
+                <div class="contact-item" onclick="openMessenger('Sophie Leroy')">
+                    <div class="contact-avatar">
+                        S
+                        <div class="online-indicator"></div>
+                    </div>
+                    <span class="contact-name">Sophie Leroy</span>
+                </div>
+                
+                <div class="contact-item" onclick="openMessenger('Lucas Moreau')">
+                    <div class="contact-avatar">L</div>
+                    <span class="contact-name">Lucas Moreau</span>
+                </div>
+                
+                <div class="contact-item" onclick="openMessenger('Emma Dubois')">
+                    <div class="contact-avatar">
+                        E
+                        <div class="online-indicator"></div>
+                    </div>
+                    <span class="contact-name">Emma Dubois</span>
+                </div>
+                
+                <div class="contact-item" onclick="openMessenger('Pierre Bernard')">
+                    <div class="contact-avatar">P</div>
+                    <span class="contact-name">Pierre Bernard</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة الدردشة المنبثقة -->
+    <div class="messenger-popup" id="messengerPopup">
+        <div class="messenger-header">
+            <span class="messenger-title" id="messengerTitle">Chat</span>
+            <button class="messenger-close" onclick="closeMessenger()">✕</button>
+        </div>
+        <div class="messenger-content">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message received">
+                    <div class="message-bubble">Salut ! Comment ça va ?</div>
+                </div>
+                <div class="message sent">
+                    <div class="message-bubble">Salut ! Ça va bien merci</div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Tapez un message...">
+                <button class="chat-send-btn" onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="SocialConnect.JS"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'970be503b43d13a7',t:'MTc1NTQ2MjI2Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

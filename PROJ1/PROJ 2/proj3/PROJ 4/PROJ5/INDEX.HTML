@@ -1,0 +1,268 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque Ancienne - Livres & Romans de Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Bibliothèque Ancienne.CSS">
+</head>
+<body class="font-inter bg-amber-50">
+    <!-- Header -->
+    <header class="vintage-gradient text-white shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container mx-auto px-6 py-6 relative z-10">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="text-4xl floating-animation">📖</div>
+                    <div>
+                        <h1 class="font-playfair text-3xl md:text-4xl font-bold text-shadow">Bibliothèque Ancienne</h1>
+                        <p class="text-amber-200 text-sm font-crimson italic">Livres & Romans de Collection</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="hover:text-amber-200 transition-all duration-300 font-medium border-b-2 border-transparent hover:border-amber-200">Accueil</a>
+                    <a href="#collection" class="hover:text-amber-200 transition-all duration-300 font-medium border-b-2 border-transparent hover:border-amber-200">Collection</a>
+                    <a href="#rares" class="hover:text-amber-200 transition-all duration-300 font-medium border-b-2 border-transparent hover:border-amber-200">Livres Rares</a>
+                    <a href="#contact" class="hover:text-amber-200 transition-all duration-300 font-medium border-b-2 border-transparent hover:border-amber-200">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button class="hover:text-amber-200 transition-all duration-300 p-2 rounded-full hover:bg-white hover:bg-opacity-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                    <button id="cartBtn" class="relative hover:text-amber-200 transition-all duration-300 p-2 rounded-full hover:bg-white hover:bg-opacity-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l-1 12H6L5 9z"></path>
+                        </svg>
+                        <span id="cartCount" class="absolute -top-1 -right-1 gold-gradient text-black text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold shadow-lg">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-6xl floating-animation">📚</div>
+            <div class="absolute top-32 right-20 text-4xl floating-animation" style="animation-delay: -2s;">📖</div>
+            <div class="absolute bottom-20 left-1/4 text-5xl floating-animation" style="animation-delay: -4s;">📜</div>
+            <div class="absolute bottom-32 right-10 text-3xl floating-animation" style="animation-delay: -1s;">✒️</div>
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-playfair text-5xl md:text-7xl font-black text-amber-900 mb-8 text-shadow leading-tight">
+                    Découvrez des <span class="gold-gradient bg-clip-text text-transparent">Trésors Littéraires</span>
+                </h2>
+                <p class="font-crimson text-2xl text-amber-800 mb-6 leading-relaxed italic">
+                    "Un livre est un rêve que vous tenez dans vos mains"
+                </p>
+                <p class="text-xl text-amber-700 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Plongez dans notre collection exceptionnelle de livres rares, romans classiques et éditions de collection. 
+                    Chaque ouvrage raconte une histoire, porte une âme et mérite une place d'honneur dans votre bibliothèque.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button onclick="scrollToProducts()" class="book-gradient text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all transform hover:scale-105 hover:-translate-y-1">
+                        📚 Explorer la Collection
+                    </button>
+                    <button onclick="scrollToRareBooks()" class="gold-gradient text-black px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all transform hover:scale-105 hover:-translate-y-1">
+                        ✨ Livres Rares
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Books -->
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-amber-100 to-transparent"></div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-12 bg-gradient-to-r from-amber-100 via-white to-amber-100 shadow-lg">
+        <div class="container mx-auto px-6">
+            <h3 class="font-playfair text-2xl font-bold text-center text-amber-900 mb-8">Explorez par Catégorie</h3>
+            <div class="flex flex-wrap justify-center gap-6">
+                <button onclick="filterProducts('tous')" class="category-btn category-active px-8 py-4 rounded-full font-semibold transition-all duration-300 book-shadow">
+                    📚 Toute la Collection
+                </button>
+                <button onclick="filterProducts('romans-classiques')" class="category-btn bg-white hover:bg-amber-50 px-8 py-4 rounded-full font-semibold transition-all duration-300 book-shadow border-2 border-amber-200">
+                    📖 Romans Classiques
+                </button>
+                <button onclick="filterProducts('livres-rares')" class="category-btn bg-white hover:bg-amber-50 px-8 py-4 rounded-full font-semibold transition-all duration-300 book-shadow border-2 border-amber-200">
+                    ✨ Livres Rares
+                </button>
+                <button onclick="filterProducts('premieres-editions')" class="category-btn bg-white hover:bg-amber-50 px-8 py-4 rounded-full font-semibold transition-all duration-300 book-shadow border-2 border-amber-200">
+                    🏆 Premières Éditions
+                </button>
+                <button onclick="filterProducts('philosophie')" class="category-btn bg-white hover:bg-amber-50 px-8 py-4 rounded-full font-semibold transition-all duration-300 book-shadow border-2 border-amber-200">
+                    🤔 Philosophie
+                </button>
+                <button onclick="filterProducts('poesie')" class="category-btn bg-white hover:bg-amber-50 px-8 py-4 rounded-full font-semibold transition-all duration-300 book-shadow border-2 border-amber-200">
+                    🌹 Poésie
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="py-16 bg-gradient-to-br from-amber-900 to-orange-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <h3 class="font-playfair text-4xl font-bold mb-4 text-shadow">Sélection du Bibliothécaire</h3>
+                <p class="font-crimson text-xl italic text-amber-200">Des ouvrages exceptionnels choisis avec passion</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h4 class="font-playfair text-xl font-bold mb-2">Éditions Rares</h4>
+                    <p class="text-amber-200">Premières éditions et ouvrages de collection authentifiés</p>
+                </div>
+                <div class="text-center p-6 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                    <div class="text-5xl mb-4">📜</div>
+                    <h4 class="font-playfair text-xl font-bold mb-2">Manuscrits Anciens</h4>
+                    <p class="text-amber-200">Documents historiques et écrits d'époque préservés</p>
+                </div>
+                <div class="text-center p-6 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                    <div class="text-5xl mb-4">✒️</div>
+                    <h4 class="font-playfair text-xl font-bold mb-2">Dédicaces d'Auteurs</h4>
+                    <p class="text-amber-200">Livres signés par les grands maîtres de la littérature</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="collection" class="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-playfair text-5xl font-bold text-amber-900 mb-6 text-shadow">Notre Collection Précieuse</h3>
+                <p class="font-crimson text-xl text-amber-800 max-w-3xl mx-auto leading-relaxed">
+                    Chaque livre de notre collection a été soigneusement sélectionné pour sa valeur littéraire, 
+                    historique ou artistique. Découvrez des trésors qui ont traversé les siècles.
+                </p>
+            </div>
+            
+            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-amber-100 to-orange-100">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-playfair text-3xl font-bold text-amber-900 mb-4">Restez Informé</h3>
+            <p class="font-crimson text-lg text-amber-800 mb-8 max-w-2xl mx-auto">
+                Recevez nos dernières acquisitions et offres exclusives directement dans votre boîte mail
+            </p>
+            <div class="max-w-md mx-auto flex gap-4">
+                <input type="email" placeholder="Votre adresse email" class="flex-1 px-4 py-3 rounded-full border-2 border-amber-300 focus:border-amber-500 focus:outline-none">
+                <button class="book-gradient text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+                    S'abonner
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="vintage-gradient text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="text-3xl">📖</div>
+                        <h4 class="font-playfair text-2xl font-bold">Bibliothèque Ancienne</h4>
+                    </div>
+                    <p class="text-amber-100 mb-6 leading-relaxed">
+                        Depuis plus de 30 ans, nous préservons et partageons les trésors de la littérature mondiale. 
+                        Chaque livre que nous proposons est une fenêtre ouverte sur l'histoire et la culture.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                            📘
+                        </button>
+                        <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                            📧
+                        </button>
+                        <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all">
+                            📱
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-playfair text-lg font-bold mb-6">Navigation</h4>
+                    <ul class="space-y-3 text-amber-100">
+                        <li><a href="#accueil" class="hover:text-white transition-colors hover:underline">Accueil</a></li>
+                        <li><a href="#collection" class="hover:text-white transition-colors hover:underline">Collection</a></li>
+                        <li><a href="#rares" class="hover:text-white transition-colors hover:underline">Livres Rares</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors hover:underline">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:underline">Expertise</a></li>
+                    </ul>
+                </div>
+                <div id="contact">
+                    <h4 class="font-playfair text-lg font-bold mb-6">Contact</h4>
+                    <div class="text-amber-100 space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <span>📧</span>
+                            <span>contact@bibliotheque-ancienne.fr</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span>📞</span>
+                            <span>+33 1 42 86 75 30</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span>📍</span>
+                            <span>Quartier Latin, Paris</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span>🕒</span>
+                            <span>Lun-Sam: 10h-19h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-amber-700 pt-8 text-center">
+                <p class="text-amber-100 font-crimson italic">
+                    &copy; 2024 Bibliothèque Ancienne. Tous droits réservés. 
+                    <span class="block mt-2 text-sm">
+                        "Les livres sont les abeilles qui portent le pollen d'une intelligence à l'autre" - James Russell Lowell
+                    </span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-playfair text-xl font-bold">Panier</h3>
+                    <button onclick="closeCart()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="cartItems" class="space-y-3 mb-4">
+                    <!-- Cart items will be inserted here -->
+                </div>
+                <div class="border-t pt-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-semibold">Total:</span>
+                        <span id="cartTotal" class="font-bold text-lg">0€</span>
+                    </div>
+                    <button class="w-full vintage-gradient text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                        Procéder au Paiement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Bibliothèque Ancienne.JS"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d9d7b9e272489b',t:'MTc1NDkzNzQzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

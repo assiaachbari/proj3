@@ -1,0 +1,172 @@
+ 
+* {
+    font-family: 'Amiri', serif;
+}
+
+/* خلفية العلم المغربي مع النجمة الخماسية */
+.hero-bg {
+    background: linear-gradient(rgba(139, 69, 19, 0.3), rgba(160, 82, 45, 0.4)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="moroccanStar" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><g fill="%23D4AF37" opacity="0.08"><path d="M100 20 L110 60 L150 60 L120 85 L130 125 L100 100 L70 125 L80 85 L50 60 L90 60 Z" stroke="%23B8860B" stroke-width="1" opacity="0.3"/><circle cx="100" cy="160" r="12" opacity="0.5"/></g></pattern><pattern id="smallStars" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse"><g fill="%23FFD700" opacity="0.15"><path d="M40 5 L42 15 L52 15 L44 21 L47 31 L40 25 L33 31 L36 21 L28 15 L38 15 Z"/><path d="M15 45 L17 50 L22 50 L18 53 L20 58 L15 55 L10 58 L12 53 L8 50 L13 50 Z"/><path d="M65 65 L67 70 L72 70 L68 73 L70 78 L65 75 L60 78 L62 73 L58 70 L63 70 Z"/></g></pattern><linearGradient id="moroccanFlag" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23C1272D"/><stop offset="30%" style="stop-color:%23DA020E"/><stop offset="70%" style="stop-color:%23C1272D"/><stop offset="100%" style="stop-color:%23A0001C"/></linearGradient><radialGradient id="centerStar" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23006233" opacity="0.1"/><stop offset="50%" style="stop-color:%23228B22" opacity="0.08"/><stop offset="100%" style="stop-color:%23006233" opacity="0.05"/></radialGradient></defs><rect width="1200" height="800" fill="url(%23moroccanFlag)"/><rect width="1200" height="800" fill="url(%23centerStar)"/><g transform="translate(600,400)"><path d="M0 -120 L35 -37 L118 -37 L57 15 L92 98 L0 46 L-92 98 L-57 15 L-118 -37 L-35 -37 Z" fill="%23006233" opacity="0.15" stroke="%23228B22" stroke-width="2" opacity="0.2"/></g><rect width="1200" height="800" fill="url(%23moroccanStar)"/><rect width="1200" height="800" fill="url(%23smallStars)"/></svg>');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* النجوم المتحركة */
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><g id="star"><path d="M50 10 L60 35 L85 35 L66 50 L76 75 L50 60 L24 75 L34 50 L15 35 L40 35 Z" fill="%23006233" opacity="0.03"/></g></defs><use href="%23star" x="0" y="0"/><use href="%23star" x="50" y="25" transform="scale(0.5)"/><use href="%23star" x="25" y="50" transform="scale(0.3)"/><use href="%23star" x="75" y="75" transform="scale(0.4)"/></svg>');
+    background-size: 300px 300px;
+    animation: floatingStars 30s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes floatingStars {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-50px, -50px) rotate(360deg); }
+}
+
+/* بطاقات المدن */
+.city-card {
+    background: linear-gradient(145deg, rgba(255, 248, 220, 0.95), rgba(250, 235, 215, 0.98));
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.1);
+    transition: all 0.4s ease;
+}
+
+.city-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(139, 69, 19, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* بطاقات أوقات الصلاة */
+.prayer-time-card {
+    background: linear-gradient(145deg, #FFF8DC, #F5DEB3);
+    border: 2px solid #D4AF37;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.prayer-time-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #D4AF37, #B8860B, #DAA520);
+}
+
+.prayer-time-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(139, 69, 19, 0.2);
+    border-color: #B8860B;
+}
+
+/* بطاقة الصلاة الحالية */
+.current-prayer-card {
+    background: linear-gradient(145deg, #228B22, #006400);
+    color: white;
+    border: 2px solid #32CD32;
+    animation: moroccanGlow 2s ease-in-out infinite alternate;
+}
+
+.current-prayer-card::before {
+    background: linear-gradient(90deg, #32CD32, #228B22, #00FF00);
+}
+
+@keyframes moroccanGlow {
+    from { 
+        box-shadow: 0 0 20px rgba(34, 139, 34, 0.5), 0 0 40px rgba(212, 175, 55, 0.3); 
+    }
+    to { 
+        box-shadow: 0 0 30px rgba(34, 139, 34, 0.8), 0 0 60px rgba(212, 175, 55, 0.5); 
+    }
+}
+
+/* لافتة الصلاة القادمة */
+.next-prayer-banner {
+    background: linear-gradient(135deg, #B8860B, #DAA520, #D4AF37);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.next-prayer-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.05) 10px,
+        rgba(255, 255, 255, 0.05) 20px
+    );
+    animation: moroccanPattern 20s linear infinite;
+}
+
+@keyframes moroccanPattern {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* صور المدن */
+.city-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* شريط التنقل */
+.navbar {
+    background: linear-gradient(135deg, rgba(184, 134, 11, 0.95), rgba(218, 165, 32, 0.95));
+    backdrop-filter: blur(15px);
+    border-bottom: 3px solid #D4AF37;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.2);
+}
+
+/* بطاقات الإحصائيات */
+.stats-card {
+    background: linear-gradient(145deg, #FFF8DC, #F5DEB3);
+    border: 2px solid #D4AF37;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #D4AF37, #B8860B);
+}
+
+/* الزخارف المغربية */
+.moroccan-ornament {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    opacity: 0.1;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="%23D4AF37"><path d="M50 10 L60 30 L80 30 L66 42 L72 62 L50 50 L28 62 L34 42 L20 30 L40 30 Z"/></g></svg>');
+    background-size: contain;
+}
